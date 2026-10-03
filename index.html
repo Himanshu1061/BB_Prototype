@@ -1,0 +1,1543 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+<meta name="color-scheme" content="light dark" />
+<meta name="description" content="बूटी & BLOOM — modern silhouettes, refined details and timeless design. Shop dresses, accessories and perfumes." />
+<link rel="icon" href="assets/img-01.png" />
+<title>बूटी &amp; BLOOM — Effortlessly You</title>
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Jost:wght@300;400;500;600&family=Tiro+Devanagari+Sanskrit:ital@0;1&display=swap" rel="stylesheet" />
+<style>
+:root{
+  color-scheme: light;
+  --bg:#faf6ef; --bg-soft:#f3ecdf; --card:#fffdf8; --ink:#2e2620; --ink-soft:#5d5248;
+  --muted:#8a7a6a; --line:#e3d7c4; --line-soft:#ece2d0;
+  --wine:#6d1220; --wine-deep:#520d18; --wine-ink:#ffffff;
+  --gold:#a5814f; --gold-soft:#c9ab77;
+  --ok:#3e6b3a; --warn:#9a6a1c; --err:#a02c22;
+  --radius:10px; --radius-s:8px;
+  --shadow:0 10px 30px rgba(82,13,24,.10);
+  --header-h:118px;
+  --serif:"Cormorant Garamond","Tiro Devanagari Sanskrit",Georgia,serif;
+  --sans:"Jost","Tiro Devanagari Sanskrit","Avenir Next","Segoe UI",system-ui,sans-serif;
+}
+@media (prefers-color-scheme: dark){
+  :root{
+    color-scheme: dark;
+    --bg:#1d1712; --bg-soft:#261d16; --card:#271e17; --ink:#f0e6d8; --ink-soft:#cbbca6;
+    --muted:#a08d76; --line:#43352a; --line-soft:#382c23;
+    --wine:#c4596a; --wine-deep:#a63c4f; --wine-ink:#fff7ef;
+    --gold:#c9a15f; --gold-soft:#d9bc85;
+    --ok:#8fc487; --warn:#dbaf5f; --err:#e08a7d;
+    --shadow:0 10px 30px rgba(0,0,0,.45);
+  }
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:var(--sans);font-weight:300;font-size:16px;line-height:1.55;-webkit-font-smoothing:antialiased}
+img{display:block;max-width:100%}
+a{color:inherit;text-decoration:none}
+button{font-family:inherit;cursor:pointer}
+input,select,textarea{font-family:inherit;font-size:1rem;color:var(--ink)}
+h1,h2,h3{font-family:var(--serif);font-weight:500;margin:0;line-height:1.12}
+.wrap{max-width:1360px;margin:0 auto;padding:0 clamp(16px,4vw,48px)}
+.kicker{font-size:.72rem;letter-spacing:.32em;text-transform:uppercase;color:var(--wine);font-weight:500}
+.section{padding:clamp(48px,7vw,88px) 0}
+.section-head{text-align:center;max-width:640px;margin:0 auto clamp(28px,4vw,44px)}
+.section-head h2{font-size:clamp(1.9rem,3.6vw,2.7rem);letter-spacing:.14em;text-transform:uppercase;margin:.35em 0 .3em}
+.section-head p{color:var(--ink-soft);margin:0}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:.55em;border:1px solid var(--wine);background:var(--wine);color:var(--wine-ink);padding:.85em 1.9em;font-size:.8rem;letter-spacing:.22em;text-transform:uppercase;font-weight:500;border-radius:2px;transition:background .25s,border-color .25s,color .25s,transform .15s}
+.btn:hover{background:var(--wine-deep);border-color:var(--wine-deep)}
+.btn:active{transform:scale(.985)}
+.btn.ghost{background:transparent;color:var(--wine)}
+.btn.ghost:hover{background:var(--wine);color:var(--wine-ink)}
+.btn.light{background:var(--bg);border-color:var(--bg);color:var(--wine-deep)}
+.btn.light:hover{background:transparent;color:#fff;border-color:#fff}
+.btn.block{width:100%}
+.btn[disabled]{opacity:.55;cursor:not-allowed}
+.btn.sm{padding:.6em 1.3em;font-size:.72rem}
+.link-arrow{font-size:.78rem;letter-spacing:.22em;text-transform:uppercase;font-weight:500;color:var(--wine);border-bottom:1px solid var(--gold-soft);padding-bottom:3px}
+.link-arrow:hover{color:var(--wine-deep)}
+:focus-visible{outline:2px solid var(--gold);outline-offset:2px}
+
+/* ---------- Announcement + header ---------- */
+.announce{background:var(--wine);color:#fdf3e7;text-align:center;font-size:.72rem;letter-spacing:.26em;text-transform:uppercase;padding:9px 12px;font-weight:400}
+header.site{position:sticky;top:0;z-index:60;background:color-mix(in srgb,var(--bg) 92%,transparent);backdrop-filter:blur(10px);border-bottom:1px solid var(--line-soft)}
+.header-in{display:flex;align-items:center;gap:clamp(18px,3vw,42px);padding:16px clamp(16px,4vw,48px);max-width:1360px;margin:0 auto}
+.logo{font-family:var(--serif);font-size:clamp(1.45rem,3vw,1.9rem);letter-spacing:.28em;font-weight:600;text-align:left;white-space:nowrap;cursor:pointer;line-height:0}
+.logo-img{height:54px;width:auto}
+@media (max-width:640px){.logo-img{height:46px}}
+.foot-logo{display:inline-block;line-height:0}
+.foot-logo img{height:72px;width:auto}
+.logo em{font-style:normal;color:var(--wine)}
+nav.main{display:flex;gap:clamp(14px,2.4vw,34px);align-items:center}
+nav.main a,nav.main button.navlink{font-size:.74rem;letter-spacing:.18em;text-transform:uppercase;font-weight:500;color:var(--ink);background:none;border:none;padding:6px 0;border-bottom:1px solid transparent;white-space:nowrap}
+[hidden]{display:none!important}
+nav.main a:hover,nav.main button.navlink:hover{color:var(--wine);border-bottom-color:var(--gold-soft)}
+nav.main a.sale-link{color:var(--wine)}
+.header-actions{display:flex;gap:6px;justify-content:flex-end;align-items:center;margin-left:auto}
+.icon-btn{position:relative;background:none;border:none;color:var(--ink);width:40px;height:40px;display:grid;place-items:center;border-radius:50%}
+.icon-btn:hover{color:var(--wine)}
+.icon-btn svg{width:21px;height:21px}
+.count-badge{position:absolute;top:2px;right:0;background:var(--wine);color:#fff;font-size:.6rem;min-width:16px;height:16px;border-radius:9px;display:grid;place-items:center;padding:0 4px;font-weight:500}
+.burger{display:none}
+.mega{position:relative}
+.mega-panel{position:absolute;top:calc(100% + 14px);left:50%;transform:translate(-50%,6px);background:var(--card);border:1px solid var(--line);box-shadow:var(--shadow);border-radius:var(--radius);padding:22px 26px;display:none;grid-template-columns:repeat(3,minmax(130px,1fr));gap:8px 34px;min-width:480px;z-index:70}
+.mega:hover .mega-panel,.mega:focus-within .mega-panel{display:grid;transform:translate(-50%,0)}
+.mega-panel h4{font-size:.68rem;letter-spacing:.28em;text-transform:uppercase;color:var(--muted);margin:0 0 10px;font-family:var(--sans);font-weight:500}
+.mega-panel a{display:block;font-size:.86rem;letter-spacing:.06em;text-transform:none;padding:4px 0;color:var(--ink-soft)}
+.mega-panel a:hover{color:var(--wine)}
+
+/* mobile drawer + search */
+.drawer{position:fixed;inset:0;z-index:90;pointer-events:none}
+.drawer .scrim{position:absolute;inset:0;background:rgba(24,14,8,.45);opacity:0;transition:opacity .3s}
+.drawer .panel{position:absolute;top:0;left:0;bottom:0;width:min(340px,86vw);background:var(--bg);padding:22px;transform:translateX(-102%);transition:transform .32s ease;overflow-y:auto}
+.drawer.open{pointer-events:auto}
+.drawer.open .scrim{opacity:1}
+.drawer.open .panel{transform:none}
+.drawer h3{font-size:1rem;letter-spacing:.24em;text-transform:uppercase;font-family:var(--sans);font-weight:500;margin:0 0 18px}
+.drawer nav a{display:block;padding:11px 0;border-bottom:1px solid var(--line-soft);font-size:.86rem;letter-spacing:.2em;text-transform:uppercase}
+.drawer .close-x{position:absolute;top:14px;right:14px}
+.searchbar{border-bottom:1px solid var(--line);background:var(--bg);display:none}
+.searchbar.open{display:block}
+.searchbar form{display:flex;gap:10px;align-items:center;max-width:900px;margin:0 auto;padding:14px 20px}
+.searchbar input{flex:1;border:none;background:transparent;font-size:1.05rem;padding:8px 0}
+.searchbar input:focus{outline:none}
+.search-hint{font-size:.8rem;color:var(--muted)}
+
+/* ---------- Hero ---------- */
+.hero{position:relative;min-height:min(82vh,760px);display:flex;align-items:flex-end;overflow:hidden;background:var(--bg-soft)}
+.hero img.bg{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center 30%}
+.hero .veil{position:absolute;inset:0;background:linear-gradient(90deg,rgba(43,18,12,.52) 0%,rgba(43,18,12,.18) 46%,rgba(43,18,12,0) 70%)}
+.hero-in{position:relative;z-index:2;color:#fdf6ea;padding:clamp(40px,7vw,84px) clamp(16px,4vw,48px);max-width:1360px;margin:0 auto;width:100%}
+.hero-in .kicker{color:#e9c9a0}
+.hero h1{font-size:clamp(2.7rem,7.2vw,5.4rem);letter-spacing:.1em;text-transform:uppercase;line-height:1.02;margin:.18em 0 .3em;font-weight:500}
+.hero p{font-size:clamp(1rem,1.6vw,1.2rem);max-width:460px;margin:0 0 28px;color:#f3e7d3}
+.hero-cta{display:flex;gap:14px;flex-wrap:wrap}
+.sale-strip{background:var(--ink);color:var(--bg);text-align:center;padding:12px 16px;font-size:.78rem;letter-spacing:.3em;text-transform:uppercase}
+.sale-strip b{color:var(--gold-soft);font-weight:500}
+
+/* ---------- Product grid / cards ---------- */
+.grid{display:grid;grid-template-columns:repeat(4,1fr);gap:clamp(14px,2.4vw,30px)}
+.card{background:transparent;display:flex;flex-direction:column}
+.card .ph{position:relative;border-radius:var(--radius);overflow:hidden;background:var(--bg-soft);aspect-ratio:3/4;cursor:pointer}
+.card .ph img{width:100%;height:100%;object-fit:cover;transition:transform .8s cubic-bezier(.2,.6,.2,1)}
+.card:hover .ph img{transform:scale(1.055)}
+.badge{position:absolute;top:12px;left:12px;z-index:3;font-size:.62rem;letter-spacing:.22em;text-transform:uppercase;font-weight:600;padding:5px 9px;border-radius:3px;background:var(--card);color:var(--wine);border:1px solid var(--line)}
+.badge.sale{background:var(--wine);color:#fff;border-color:var(--wine)}
+.heart{position:absolute;top:8px;right:8px;z-index:3;width:36px;height:36px;border-radius:50%;border:1px solid var(--line);background:color-mix(in srgb,var(--card) 90%,transparent);display:grid;place-items:center;color:var(--ink)}
+.heart svg{width:18px;height:18px}
+.heart.active{color:var(--wine);border-color:var(--wine)}
+.heart.active svg path{fill:var(--wine)}
+.quickadd{position:absolute;left:10px;right:10px;bottom:10px;z-index:3;background:color-mix(in srgb,var(--card) 94%,transparent);border:1px solid var(--line);border-radius:var(--radius-s);padding:9px;font-size:.72rem;letter-spacing:.2em;text-transform:uppercase;font-weight:500;text-align:center;opacity:0;transform:translateY(8px);transition:.3s}
+.card:hover .quickadd,.card:focus-within .quickadd{opacity:1;transform:none}
+.quickadd:hover{background:var(--wine);color:#fff;border-color:var(--wine)}
+.card .meta{padding:14px 2px 0;text-align:left}
+.card .meta h3{font-family:var(--sans);font-size:.95rem;font-weight:400;letter-spacing:.04em;cursor:pointer}
+.card .meta h3:hover{color:var(--wine)}
+.price-row{display:flex;gap:9px;align-items:baseline;margin-top:5px;flex-wrap:wrap}
+.price{font-weight:500;font-size:1rem}
+.mrp{color:var(--muted);text-decoration:line-through;font-size:.86rem}
+.off{color:var(--wine);font-size:.78rem;font-weight:500;letter-spacing:.06em}
+.swatches{display:flex;gap:6px;margin-top:8px;align-items:center}
+.swatch{width:15px;height:15px;border-radius:50%;border:1px solid rgba(0,0,0,.18);display:inline-block}
+.swatch-note{font-size:.74rem;color:var(--muted)}
+.stock-note{font-size:.74rem;margin-top:6px;color:var(--warn);font-weight:400}
+.stock-note.ok{color:var(--ok)}
+
+/* category tiles */
+.tiles{display:grid;grid-template-columns:repeat(4,1fr);gap:clamp(12px,2vw,24px)}
+.tile{position:relative;border-radius:var(--radius);overflow:hidden;aspect-ratio:3/4;cursor:pointer;background:var(--bg-soft)}
+.tile img{width:100%;height:100%;object-fit:cover;transition:transform .8s cubic-bezier(.2,.6,.2,1)}
+.tile:hover img{transform:scale(1.06)}
+.tile .tile-in{position:absolute;inset:auto 0 0 0;padding:20px;background:linear-gradient(transparent,rgba(30,14,8,.66));color:#fdf6ea}
+.tile h3{font-size:1.35rem;letter-spacing:.18em;text-transform:uppercase}
+.tile span{font-size:.7rem;letter-spacing:.26em;text-transform:uppercase;border-bottom:1px solid var(--gold-soft);padding-bottom:2px}
+
+/* editorial + story */
+.split{display:grid;grid-template-columns:1fr 1fr;gap:clamp(24px,5vw,72px);align-items:center}
+.split .imgbox{border-radius:var(--radius);overflow:hidden;aspect-ratio:4/5;background:var(--bg-soft)}
+.split .imgbox.tall{aspect-ratio:3/4}
+.split img{width:100%;height:100%;object-fit:cover}
+.split h2{font-size:clamp(1.8rem,3.4vw,2.6rem);letter-spacing:.12em;text-transform:uppercase;margin:.3em 0 .5em}
+.split p{color:var(--ink-soft);max-width:46ch}
+.values{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;margin-top:34px}
+.value{border-top:1px solid var(--line);padding-top:12px;font-size:.8rem;letter-spacing:.18em;text-transform:uppercase;color:var(--ink-soft)}
+.ig-row{display:grid;grid-template-columns:repeat(5,1fr);gap:10px}
+.ig-row .ig{border-radius:var(--radius-s);overflow:hidden;aspect-ratio:1;background:var(--bg-soft)}
+.ig-row img{width:100%;height:100%;object-fit:cover;transition:transform .7s}
+.ig-row .ig:hover img{transform:scale(1.07)}
+.newsletter{background:var(--bg-soft);border-block:1px solid var(--line-soft)}
+.newsletter-in{max-width:620px;margin:0 auto;text-align:center}
+.newsletter h2{font-size:clamp(1.7rem,3vw,2.3rem);letter-spacing:.12em;text-transform:uppercase;margin:.3em 0 .35em}
+.newsletter p{color:var(--ink-soft);margin:0 0 22px}
+.nl-form{display:flex;gap:0;max-width:480px;margin:0 auto;border:1px solid var(--line);border-radius:3px;overflow:hidden;background:var(--card)}
+.nl-form input{flex:1;border:none;background:transparent;padding:13px 16px;min-width:0}
+.nl-form input:focus{outline:none}
+.nl-form button{border:none;background:var(--wine);color:#fff;letter-spacing:.2em;font-size:.74rem;text-transform:uppercase;padding:0 22px;font-weight:500}
+.nl-form button:hover{background:var(--wine-deep)}
+.form-msg{font-size:.85rem;margin-top:12px;color:var(--ok);min-height:1.2em}
+
+/* ---------- Footer ---------- */
+footer.site{background:var(--ink);color:color-mix(in srgb,var(--bg) 88%,#fff);margin-top:0}
+@media (prefers-color-scheme: dark){footer.site{background:#140f0b}}
+.foot-grid{display:grid;grid-template-columns:1.4fr 1fr 1fr 1fr 1fr;gap:28px;padding:56px 0 40px}
+.foot-grid h4{font-size:.7rem;letter-spacing:.3em;text-transform:uppercase;margin:0 0 16px;color:var(--gold-soft);font-family:var(--sans);font-weight:500}
+.foot-grid a{display:block;padding:4px 0;font-size:.9rem;opacity:.85}
+.foot-grid a:hover{opacity:1;color:var(--gold-soft)}
+.foot-brand .logo{text-align:left;color:inherit;font-size:1.5rem}
+.foot-brand p{font-size:.9rem;opacity:.75;max-width:32ch}
+.foot-bottom{border-top:1px solid rgba(255,255,255,.14);padding:18px 0 26px;display:flex;justify-content:space-between;gap:14px;flex-wrap:wrap;font-size:.78rem;opacity:.75}
+
+/* ---------- Listing page ---------- */
+.crumbs{font-size:.76rem;letter-spacing:.14em;text-transform:uppercase;color:var(--muted);padding:22px 0 0}
+.crumbs a:hover{color:var(--wine)}
+.list-head{text-align:center;padding:18px 0 8px}
+.list-head h1{font-size:clamp(2rem,4.4vw,3.1rem);letter-spacing:.16em;text-transform:uppercase;margin:.25em 0 .3em}
+.list-head p{color:var(--ink-soft);max-width:560px;margin:0 auto}
+.toolbar{display:flex;justify-content:space-between;align-items:center;gap:14px;border-block:1px solid var(--line);padding:12px 0;margin:26px 0 30px;flex-wrap:wrap}
+.toolbar .count{font-size:.8rem;letter-spacing:.18em;text-transform:uppercase;color:var(--muted)}
+.toolbar select{border:1px solid var(--line);background:var(--card);border-radius:3px;padding:8px 10px;font-size:.85rem}
+.filter-btn{display:none;border:1px solid var(--line);background:var(--card);border-radius:3px;padding:9px 16px;font-size:.76rem;letter-spacing:.18em;text-transform:uppercase;font-weight:500}
+.list-layout{display:grid;grid-template-columns:230px 1fr;gap:clamp(20px,3.4vw,44px);align-items:start}
+.filters{position:sticky;top:calc(var(--header-h) + 10px)}
+.filters h4{font-size:.72rem;letter-spacing:.26em;text-transform:uppercase;margin:22px 0 10px;font-family:var(--sans);font-weight:500}
+.filters h4:first-child{margin-top:0}
+.fgroup{border-bottom:1px solid var(--line-soft);padding-bottom:18px}
+.fcheck{display:flex;align-items:center;gap:9px;padding:5px 0;font-size:.9rem;color:var(--ink-soft);cursor:pointer}
+.fcheck input{accent-color:var(--wine);width:16px;height:16px}
+.fcheck .n{margin-left:auto;font-size:.76rem;color:var(--muted)}
+.price-range{display:flex;gap:8px;align-items:center}
+.price-range input{width:100%;border:1px solid var(--line);background:var(--card);border-radius:3px;padding:7px 9px;font-size:.85rem}
+.clear-filters{font-size:.76rem;letter-spacing:.16em;text-transform:uppercase;color:var(--wine);background:none;border:none;padding:0;margin-top:16px;border-bottom:1px solid var(--gold-soft)}
+.empty-state{text-align:center;padding:70px 20px;border:1px dashed var(--line);border-radius:var(--radius)}
+.empty-state h3{font-size:1.5rem;margin-bottom:8px}
+.empty-state p{color:var(--ink-soft)}
+
+/* ---------- Product page ---------- */
+.pdp{display:grid;grid-template-columns:1.05fr 1fr;gap:clamp(24px,4.5vw,64px);padding-top:26px}
+.gallery .main-img{border-radius:var(--radius);overflow:hidden;background:var(--bg-soft);aspect-ratio:3/4}
+.gallery .main-img img{width:100%;height:100%;object-fit:cover}
+.thumbs{display:flex;gap:10px;margin-top:10px}
+.thumbs button{width:76px;height:96px;border-radius:var(--radius-s);overflow:hidden;border:2px solid transparent;padding:0;background:var(--bg-soft)}
+.thumbs button.sel{border-color:var(--wine)}
+.thumbs img{width:100%;height:100%;object-fit:cover}
+.pdp-info h1{font-size:clamp(1.9rem,3.4vw,2.6rem);letter-spacing:.06em;margin:.15em 0 .2em}
+.sku{font-size:.74rem;letter-spacing:.2em;text-transform:uppercase;color:var(--muted)}
+.rating-row{display:flex;align-items:center;gap:10px;margin:12px 0 4px;font-size:.88rem;color:var(--ink-soft)}
+.stars{color:var(--gold);letter-spacing:2px;font-size:.95rem}
+.pdp-price{display:flex;gap:12px;align-items:baseline;margin:14px 0 4px}
+.pdp-price .price{font-size:1.6rem}
+.pdp-price .mrp{font-size:1.05rem}
+.tax-note{font-size:.78rem;color:var(--muted)}
+.opt-label{font-size:.74rem;letter-spacing:.24em;text-transform:uppercase;font-weight:500;margin:22px 0 10px;display:flex;justify-content:space-between;align-items:center}
+.opt-label button{background:none;border:none;color:var(--wine);font-size:.74rem;letter-spacing:.14em;text-transform:uppercase;border-bottom:1px solid var(--gold-soft);padding:0}
+.pill-row{display:flex;gap:8px;flex-wrap:wrap}
+.swatch-lg{width:34px;height:34px;border-radius:50%;border:2px solid transparent;outline:1px solid var(--line);outline-offset:2px;padding:0}
+.swatch-lg.sel{border-color:var(--bg);outline-color:var(--wine)}
+.size-btn{min-width:48px;padding:10px 12px;border:1px solid var(--line);background:var(--card);border-radius:3px;font-size:.86rem;letter-spacing:.08em}
+.size-btn.sel{background:var(--ink);color:var(--bg);border-color:var(--ink)}
+.size-btn:disabled{opacity:.35;text-decoration:line-through;cursor:not-allowed}
+.qty-ctrl{display:inline-flex;border:1px solid var(--line);border-radius:3px;overflow:hidden}
+.qty-ctrl button{width:40px;height:44px;background:var(--card);border:none;font-size:1.05rem;color:var(--ink)}
+.qty-ctrl span{min-width:42px;display:grid;place-items:center;font-weight:400}
+.pdp-actions{display:flex;gap:12px;margin-top:26px;flex-wrap:wrap}
+.pdp-actions .btn{flex:1;min-width:200px}
+.wish-btn{flex:0 0 auto !important;min-width:0 !important}
+.trust-row{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin-top:26px}
+.trust-row div{border:1px solid var(--line-soft);border-radius:var(--radius-s);padding:12px;text-align:center;font-size:.76rem;letter-spacing:.1em;text-transform:uppercase;color:var(--ink-soft);background:var(--card)}
+.pin-row{display:flex;gap:8px;margin-top:14px}
+.pin-row input{flex:1;border:1px solid var(--line);background:var(--card);border-radius:3px;padding:11px 12px;min-width:0}
+.pin-row button{border:1px solid var(--wine);background:transparent;color:var(--wine);border-radius:3px;padding:0 18px;font-size:.76rem;letter-spacing:.18em;text-transform:uppercase;font-weight:500}
+.accordion{border-top:1px solid var(--line);margin-top:30px}
+.acc-item{border-bottom:1px solid var(--line)}
+.acc-item>button{width:100%;display:flex;justify-content:space-between;align-items:center;background:none;border:none;padding:16px 2px;font-size:.82rem;letter-spacing:.2em;text-transform:uppercase;font-weight:500;color:var(--ink);text-align:left}
+.acc-body{display:none;padding:0 2px 18px;color:var(--ink-soft);font-size:.94rem}
+.acc-item.open .acc-body{display:block}
+.acc-body table{width:100%;border-collapse:collapse;font-size:.88rem}
+.acc-body th,.acc-body td{border:1px solid var(--line-soft);padding:8px 10px;text-align:left}
+.reviews{margin-top:8px}
+.review{border-bottom:1px solid var(--line-soft);padding:16px 0}
+.review .r-head{display:flex;justify-content:space-between;gap:10px;font-size:.86rem}
+.review p{color:var(--ink-soft);margin:.4em 0 0;font-size:.94rem}
+.verified{font-size:.7rem;letter-spacing:.14em;text-transform:uppercase;color:var(--ok)}
+.sticky-bar{position:fixed;left:0;right:0;bottom:0;z-index:55;background:color-mix(in srgb,var(--card) 96%,transparent);backdrop-filter:blur(8px);border-top:1px solid var(--line);padding:10px clamp(14px,4vw,40px);display:none;align-items:center;gap:14px}
+.sticky-bar.show{display:flex}
+.sticky-bar .sb-name{font-weight:400;font-size:.92rem}
+.sticky-bar .sb-price{font-weight:500}
+.sticky-bar .btn{margin-left:auto}
+
+/* ---------- Cart / checkout ---------- */
+.cart-layout{display:grid;grid-template-columns:1.5fr 1fr;gap:clamp(22px,4vw,56px);align-items:start;padding-bottom:70px}
+.cart-item{display:grid;grid-template-columns:92px 1fr auto;gap:16px;padding:18px 0;border-bottom:1px solid var(--line-soft)}
+.cart-item img{width:92px;height:118px;object-fit:cover;border-radius:var(--radius-s)}
+.cart-item h3{font-family:var(--sans);font-size:.98rem;font-weight:400;cursor:pointer}
+.cart-item h3:hover{color:var(--wine)}
+.cart-item .ci-meta{font-size:.84rem;color:var(--muted);margin-top:3px}
+.ci-actions{display:flex;gap:16px;align-items:center;margin-top:10px}
+.remove-link{background:none;border:none;color:var(--wine);font-size:.78rem;letter-spacing:.12em;text-transform:uppercase;padding:0;border-bottom:1px solid var(--gold-soft)}
+.summary{background:var(--card);border:1px solid var(--line);border-radius:var(--radius);padding:24px;position:sticky;top:calc(var(--header-h) + 12px)}
+.summary h3{font-size:1.15rem;letter-spacing:.16em;text-transform:uppercase;font-family:var(--sans);font-weight:500;margin-bottom:16px}
+.sum-row{display:flex;justify-content:space-between;padding:7px 0;font-size:.94rem;color:var(--ink-soft)}
+.sum-row.total{border-top:1px solid var(--line);margin-top:10px;padding-top:14px;color:var(--ink);font-weight:500;font-size:1.05rem}
+.free-ship{margin:4px 0 14px}
+.free-ship p{font-size:.84rem;color:var(--ink-soft);margin:0 0 8px}
+.free-ship p b{color:var(--wine);font-weight:500}
+.progress{height:6px;background:var(--line-soft);border-radius:4px;overflow:hidden}
+.progress i{display:block;height:100%;background:var(--wine);border-radius:4px;transition:width .5s}
+.coupon-row{display:flex;gap:8px;margin:12px 0 4px}
+.coupon-row input{flex:1;border:1px solid var(--line);border-radius:3px;padding:10px;background:var(--bg);text-transform:uppercase;min-width:0}
+.coupon-row button{border:1px solid var(--ink);background:var(--ink);color:var(--bg);border-radius:3px;padding:0 16px;font-size:.74rem;letter-spacing:.16em;text-transform:uppercase}
+.form-grid{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+.field{display:flex;flex-direction:column;gap:6px}
+.field.full{grid-column:1/-1}
+.field label{font-size:.72rem;letter-spacing:.2em;text-transform:uppercase;font-weight:500;color:var(--ink-soft)}
+.field input,.field select,.field textarea{border:1px solid var(--line);background:var(--card);border-radius:3px;padding:12px 13px;width:100%}
+.field .err-msg{font-size:.78rem;color:var(--err);display:none}
+.field.invalid input{border-color:var(--err)}
+.field.invalid .err-msg{display:block}
+.pay-methods{display:grid;gap:10px}
+.pay-opt{display:flex;gap:12px;align-items:flex-start;border:1px solid var(--line);border-radius:var(--radius-s);padding:14px 16px;background:var(--card);cursor:pointer}
+.pay-opt.sel{border-color:var(--wine);box-shadow:0 0 0 1px var(--wine)}
+.pay-opt input{margin-top:3px;accent-color:var(--wine)}
+.pay-opt b{font-weight:500;display:block}
+.pay-opt span{font-size:.84rem;color:var(--muted)}
+.checkout-sec{background:var(--card);border:1px solid var(--line);border-radius:var(--radius);padding:clamp(18px,3vw,30px);margin-bottom:20px}
+.checkout-sec h3{font-family:var(--sans);font-size:.92rem;letter-spacing:.22em;text-transform:uppercase;font-weight:500;margin-bottom:18px;display:flex;gap:12px;align-items:center}
+.checkout-sec h3 .step-n{width:24px;height:24px;border-radius:50%;background:var(--wine);color:#fff;display:grid;place-items:center;font-size:.74rem;letter-spacing:0}
+
+/* confirmation */
+.confirm-hero{text-align:center;padding:56px 20px 10px}
+.confirm-hero .tick{width:70px;height:70px;border-radius:50%;border:1.5px solid var(--ok);color:var(--ok);display:grid;place-items:center;margin:0 auto 18px}
+.confirm-hero h1{font-size:clamp(2rem,4.6vw,3rem);letter-spacing:.14em;text-transform:uppercase}
+.track-steps{display:grid;grid-template-columns:repeat(4,1fr);gap:8px;margin:26px 0}
+.track-steps .ts{border-top:3px solid var(--line);padding-top:10px;font-size:.74rem;letter-spacing:.14em;text-transform:uppercase;color:var(--muted)}
+.track-steps .ts.done{border-color:var(--wine);color:var(--ink)}
+.track-steps .ts small{display:block;text-transform:none;letter-spacing:0;color:var(--muted);margin-top:3px;font-size:.76rem}
+
+/* account / admin */
+.acct-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+.acct-card{background:var(--card);border:1px solid var(--line);border-radius:var(--radius);padding:22px}
+.acct-card h3{font-family:var(--sans);font-size:.84rem;letter-spacing:.2em;text-transform:uppercase;font-weight:500;margin-bottom:8px}
+.acct-card p{color:var(--ink-soft);font-size:.92rem;margin:0 0 12px}
+.stat-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;margin-bottom:26px}
+.stat{background:var(--card);border:1px solid var(--line);border-radius:var(--radius);padding:20px}
+.stat .k{font-size:.7rem;letter-spacing:.22em;text-transform:uppercase;color:var(--muted)}
+.stat .v{font-family:var(--serif);font-size:2rem;margin-top:4px}
+table.admin{width:100%;border-collapse:collapse;font-size:.9rem;background:var(--card);border:1px solid var(--line);border-radius:var(--radius);overflow:hidden}
+table.admin th{font-size:.7rem;letter-spacing:.18em;text-transform:uppercase;color:var(--muted);font-weight:500;text-align:left}
+table.admin th,table.admin td{padding:12px 14px;border-bottom:1px solid var(--line-soft)}
+table.admin tr:last-child td{border-bottom:none}
+.pill{display:inline-block;font-size:.68rem;letter-spacing:.14em;text-transform:uppercase;padding:4px 9px;border-radius:20px;border:1px solid var(--line);color:var(--ink-soft)}
+.pill.paid{border-color:var(--ok);color:var(--ok)}
+.pill.packed{border-color:var(--warn);color:var(--warn)}
+.stock-ctrl{display:inline-flex;align-items:center;gap:8px}
+.stock-ctrl button{width:26px;height:26px;border:1px solid var(--line);background:var(--bg);border-radius:3px;color:var(--ink)}
+.tabs{display:flex;gap:6px;flex-wrap:wrap;margin-bottom:20px}
+.tabs button{border:1px solid var(--line);background:var(--card);border-radius:20px;padding:8px 18px;font-size:.78rem;letter-spacing:.14em;text-transform:uppercase;font-weight:500;color:var(--ink-soft)}
+.tabs button.sel{background:var(--wine);border-color:var(--wine);color:#fff}
+
+/* modal + toast */
+.modal{position:fixed;inset:0;z-index:100;display:none;place-items:center;padding:18px}
+.modal.open{display:grid}
+.modal .scrim{position:absolute;inset:0;background:rgba(24,14,8,.5)}
+.modal .box{position:relative;background:var(--bg);border-radius:var(--radius);max-width:560px;width:100%;max-height:86vh;overflow-y:auto;padding:28px;box-shadow:var(--shadow)}
+.modal .box h3{font-size:1.5rem;margin-bottom:12px}
+.toast{position:fixed;left:50%;bottom:24px;transform:translate(-50%,20px);background:var(--ink);color:var(--bg);padding:13px 22px;border-radius:4px;font-size:.88rem;z-index:120;opacity:0;pointer-events:none;transition:.35s;max-width:92vw;text-align:center;box-shadow:var(--shadow)}
+.toast.show{opacity:1;transform:translate(-50%,0)}
+.toast b{color:var(--gold-soft);font-weight:500}
+.size-pop{position:fixed;inset:0;z-index:95;display:none;place-items:end center}
+.size-pop.open{display:grid}
+.size-pop .scrim{position:absolute;inset:0;background:rgba(24,14,8,.45)}
+.size-pop .sheet{position:relative;background:var(--bg);width:100%;max-width:520px;border-radius:14px 14px 0 0;padding:24px;animation:up .3s ease}
+@keyframes up{from{transform:translateY(24px);opacity:.4}to{transform:none;opacity:1}}
+@media (prefers-reduced-motion: reduce){*{animation:none!important;transition:none!important;scroll-behavior:auto!important}}
+
+/* prose pages */
+.prose{max-width:820px;margin:0 auto;padding-bottom:70px}
+.prose h1{font-size:clamp(2rem,4.4vw,3rem);letter-spacing:.14em;text-transform:uppercase;text-align:center;margin:.4em 0 .6em}
+.prose h2{font-size:1.45rem;margin:1.4em 0 .4em}
+.prose p,.prose li{color:var(--ink-soft)}
+.prose ul{padding-left:20px}
+.faq-item{border-bottom:1px solid var(--line)}
+.faq-item>button{width:100%;text-align:left;background:none;border:none;padding:18px 2px;font-size:1rem;font-weight:400;color:var(--ink);display:flex;justify-content:space-between;gap:12px}
+.faq-item .faq-body{display:none;padding:0 2px 18px;color:var(--ink-soft)}
+.faq-item.open .faq-body{display:block}
+
+/* responsive */
+@media (max-width:1080px){
+  .grid{grid-template-columns:repeat(3,1fr)}
+  .foot-grid{grid-template-columns:1fr 1fr 1fr}
+}
+@media (max-width:900px){
+  nav.main{display:none}
+  .burger{display:grid}
+  #searchBtn{display:none}
+  .logo{flex:1;text-align:center}
+  .list-layout{grid-template-columns:1fr}
+  .filters{display:none}
+  .filters.open{display:block;position:fixed;inset:auto 0 0 0;z-index:96;background:var(--bg);border-radius:14px 14px 0 0;padding:22px;max-height:78vh;overflow-y:auto;box-shadow:var(--shadow)}
+  .filter-btn{display:inline-block}
+  .pdp{grid-template-columns:1fr}
+  .cart-layout{grid-template-columns:1fr}
+  .summary{position:static}
+  .split{grid-template-columns:1fr}
+  .values{grid-template-columns:repeat(2,1fr)}
+  .stat-grid{grid-template-columns:repeat(2,1fr)}
+  .acct-grid{grid-template-columns:1fr}
+  .form-grid{grid-template-columns:1fr}
+}
+@media (max-width:640px){
+  .header-in{padding:12px 10px;gap:4px}
+  .logo{font-size:1.18rem;letter-spacing:.18em}
+  .header-actions{gap:0}
+  .header-actions .icon-btn{width:36px;height:36px}
+  #acctBtn{display:none}
+  .hero h1{letter-spacing:.05em}
+  .tile h3{font-size:1.02rem;letter-spacing:.1em}
+  .tile .tile-in{padding:14px}
+  .grid{grid-template-columns:repeat(2,1fr);gap:14px}
+  .tiles{grid-template-columns:repeat(2,1fr)}
+  .ig-row{grid-template-columns:repeat(3,1fr)}
+  .ig-row .ig:nth-child(n+4){display:none}
+  .foot-grid{grid-template-columns:1fr 1fr}
+  .hero{min-height:74vh}
+  .quickadd{opacity:1;transform:none}
+  .trust-row{grid-template-columns:1fr 1fr 1fr;gap:6px}
+  .trust-row div{padding:9px 4px;font-size:.64rem}
+  .track-steps{grid-template-columns:repeat(2,1fr);gap:14px}
+}
+</style>
+</head>
+<body>
+<div class="announce" id="announce">Free shipping on orders above ₹1,999 &nbsp;·&nbsp; New Season — Now Live</div>
+
+<header class="site">
+  <div class="header-in">
+    <button class="icon-btn burger" id="burgerBtn" aria-label="Open menu">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M3 6h18M3 12h18M3 18h12"/></svg>
+    </button>
+    <a class="logo" href="#/" data-nav aria-label="बूटी and BLOOM home"><picture><source media="(prefers-color-scheme: dark)" srcset="assets/img-02.png"/><img class="logo-img" src="assets/img-03.png" alt="बूटी &amp; BLOOM" width="1200" height="732"/></picture></a>
+    <nav class="main" aria-label="Primary">
+      <a href="#/shop/new-in" data-nav>New In</a>
+      <span class="mega">
+        <button class="navlink" type="button">Women</button>
+          <span class="mega-panel">
+            <span><h4>Shop by</h4>
+              <a href="#/shop/new-in" data-nav>New In</a>
+              <a href="#/shop/dresses" data-nav>Dresses</a>
+              <a href="#/shop/women" data-nav>All Women</a>
+              <a href="#/shop/sale" data-nav>Sale</a>
+            </span>
+            <span><h4>Collections</h4>
+              <a href="#/shop/accessories" data-nav>Accessories</a>
+              <a href="#/shop/perfumes" data-nav>Perfumes</a>
+              <a href="#/shop/dresses" data-nav>Occasion Edit</a>
+              <a href="#/shop/women" data-nav>Everyday Elegance</a>
+            </span>
+            <span><h4>Featured</h4>
+              <a href="#/product/silk-blend-midi-dress" data-nav>Silk Blend Midi Dress</a>
+              <a href="#/product/blossom-eclat-parfum" data-nav>Blossom Éclat Parfum</a>
+              <a href="#/about" data-nav>Our Story</a>
+            </span>
+          </span>
+        </span>
+      <a href="#/shop/dresses" data-nav>Dresses</a>
+      <a href="#/shop/accessories" data-nav>Accessories</a>
+      <a href="#/shop/perfumes" data-nav>Perfumes</a>
+      <a href="#/shop/sale" class="sale-link" data-nav>Sale</a>
+    </nav>
+    <div class="header-actions">
+      <button class="icon-btn" id="searchBtn" aria-label="Search">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.8-3.8"/></svg>
+      </button>
+      <button class="icon-btn" id="wishBtn" aria-label="Wishlist">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M12 20.5C7 16.5 3.5 13.3 3.5 9.6 3.5 7 5.4 5 7.8 5c1.7 0 3.2.9 4.2 2.3C13 5.9 14.5 5 16.2 5c2.4 0 4.3 2 4.3 4.6 0 3.7-3.5 6.9-8.5 10.9Z"/></svg>
+        <span class="count-badge" id="wishCount" hidden>0</span>
+      </button>
+      <button class="icon-btn" id="bagBtn" aria-label="Shopping bag">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M5 8h14l-1.2 12.2a1.5 1.5 0 0 1-1.5 1.3H7.7a1.5 1.5 0 0 1-1.5-1.3L5 8Z"/><path d="M8.5 10.5V6.8a3.5 3.5 0 0 1 7 0v3.7"/></svg>
+        <span class="count-badge" id="bagCount" hidden>0</span>
+      </button>
+    </div>
+  </div>
+  <div class="searchbar" id="searchbar">
+    <form id="searchForm">
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.8-3.8"/></svg>
+      <input id="searchInput" type="search" placeholder="Search dresses, bags, perfumes…" autocomplete="off" aria-label="Search products" />
+      <span class="search-hint">Press Enter to see all results</span>
+    </form>
+    <div class="wrap" id="searchLive" style="padding-bottom:18px"></div>
+  </div>
+</header>
+
+<div class="drawer" id="mobileDrawer" aria-hidden="true">
+  <div class="scrim" data-close-drawer></div>
+  <div class="panel">
+    <button class="icon-btn close-x" data-close-drawer aria-label="Close menu">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M5 5l14 14M19 5L5 19"/></svg>
+    </button>
+    <h3>Menu</h3>
+    <nav>
+      <a href="#/" data-nav>Home</a>
+      <a href="#/shop/new-in" data-nav>New In</a>
+      <a href="#/shop/women" data-nav>Women</a>
+      <a href="#/shop/dresses" data-nav>Dresses</a>
+      <a href="#/shop/accessories" data-nav>Accessories</a>
+      <a href="#/shop/perfumes" data-nav>Perfumes</a>
+      <a href="#/shop/sale" data-nav>Sale</a>
+      <a href="#/wishlist" data-nav>Wishlist</a>
+      <a href="#/account" data-nav>My Account</a>
+      <a href="#/track" data-nav>Track Order</a>
+      <a href="#/about" data-nav>About Us</a>
+      <a href="#/contact" data-nav>Contact &amp; FAQ</a>
+    </nav>
+  </div>
+</div>
+
+<main id="view" tabindex="-1"></main>
+
+<footer class="site">
+  <div class="wrap">
+    <div class="foot-grid">
+      <div class="foot-brand">
+        <span class="foot-logo"><img src="assets/img-02.png" alt="बूटी &amp; BLOOM" width="1200" height="732"/></span>
+        <p>Modern femininity through thoughtful silhouettes, refined details and timeless design — made in India, worn everywhere.</p>
+        <p style="margin-top:14px">Follow <a href="#/about" data-nav style="display:inline;color:var(--gold-soft)">@bootiandbloom</a></p>
+      </div>
+      <div><h4>Shop</h4>
+        <a href="#/shop/new-in" data-nav>New Arrivals</a>
+        <a href="#/shop/dresses" data-nav>Dresses</a>
+        <a href="#/shop/accessories" data-nav>Accessories</a>
+        <a href="#/shop/perfumes" data-nav>Perfumes</a>
+        <a href="#/shop/sale" data-nav>Sale</a>
+      </div>
+      <div><h4>Help</h4>
+        <a href="#/contact" data-nav>Contact</a>
+        <a href="#/contact" data-nav>FAQ</a>
+        <a href="#/policy/shipping" data-nav>Shipping</a>
+        <a href="#/policy/returns" data-nav>Returns &amp; Exchanges</a>
+        <a href="#/track" data-nav>Track Order</a>
+      </div>
+      <div><h4>About</h4>
+        <a href="#/about" data-nav>Our Story</a>
+        <a href="#/contact" data-nav>Contact</a>
+        <a href="#/account" data-nav>My Account</a>
+        <a href="#/wishlist" data-nav>Wishlist</a>
+      </div>
+      <div><h4>Legal</h4>
+        <a href="#/policy/privacy" data-nav>Privacy Policy</a>
+        <a href="#/policy/terms" data-nav>Terms &amp; Conditions</a>
+        <a href="#/policy/refund" data-nav>Refund &amp; Cancellation</a>
+        <a href="#/policy/shipping" data-nav>Shipping Policy</a>
+      </div>
+    </div>
+    <div class="foot-bottom">
+      <span>© 2026 बूटी &amp; BLOOM · support@bootiandbloom.com · UPI · Visa · Mastercard · RuPay · Net Banking</span>
+      <span>Secure checkout · Easy 7-day returns</span>
+    </div>
+  </div>
+</footer>
+
+<div class="modal" id="modal" aria-hidden="true">
+  <div class="scrim" data-close-modal></div>
+  <div class="box" role="dialog" aria-modal="true" id="modalBox"></div>
+</div>
+
+<div class="size-pop" id="sizePop" aria-hidden="true">
+  <div class="scrim" data-close-sizepop></div>
+  <div class="sheet" id="sizePopSheet"></div>
+</div>
+
+<div class="sticky-bar" id="stickyBar"></div>
+<div class="toast" id="toast" role="status"></div>
+
+<script>
+/* ============================== DATA ============================== */
+const FREE_SHIP = 1999, SHIP_FEE = 149;
+const SIZES = ["XS","S","M","L","XL"];
+const PRODUCTS = [
+ {id:"silk-blend-midi-dress", sku:"TNB-DR-001", name:"Silk Blend Midi Dress", cat:"dresses", price:2499, mrp:3999, rating:4.6, reviews:128, badge:"BESTSELLER", isNew:false, bestseller:true,
+  colors:[["Champagne","#d9c3a3"],["Black","#26211d"],["Wine","#6d1220"]], sizes:SIZES, stock:{XS:4,S:8,M:12,L:5,XL:0},
+  img:"assets/img-04.jpg", img2:"assets/img-04.jpg",
+  desc:"Our signature midi, cut on the bias so it pours rather than clings. A fluid silk-blend with a soft sheen, adjustable straps and a hem that moves beautifully as you walk.",
+  fabric:"78% viscose, 22% silk · fully lined bodice", fit:"Bias cut · midi length · model is 5′8″ and wears size S", care:"Dry clean recommended · cool iron inside out"},
+ {id:"noir-satin-evening-dress", sku:"TNB-DR-002", name:"Noir Satin Evening Dress", cat:"dresses", price:3499, mrp:5999, rating:4.8, reviews:64, badge:"NEW", isNew:true, bestseller:true,
+  colors:[["Black","#26211d"]], sizes:SIZES, stock:{XS:3,S:6,M:7,L:4,XL:2},
+  img:"assets/img-05.jpg", img2:"assets/img-05.jpg",
+  desc:"Old-Hollywood glamour, distilled. Liquid satin with a crystal-ring detail at the bust and a floor-sweeping ruffled hem — made for evenings that run long.",
+  fabric:"Matte satin · 100% polyester with stretch lining", fit:"Body-skimming · maxi length · model is 5′7″ and wears size S", care:"Dry clean only · store away from direct light"},
+ {id:"scarlet-bloom-wrap-dress", sku:"TNB-DR-003", name:"Scarlet Bloom Wrap Dress", cat:"dresses", price:2799, mrp:3999, rating:4.5, reviews:92, badge:"", isNew:false, bestseller:true,
+  colors:[["Scarlet","#a11f2e"],["Wine","#6d1220"]], sizes:SIZES, stock:{XS:5,S:9,M:3,L:6,XL:4},
+  img:"assets/img-06.jpg", img2:"assets/img-06.jpg",
+  desc:"A true wrap silhouette in our hand-drawn Bloom print. Flutter sleeves, a self-tie waist and a skirt made for golden-hour light.",
+  fabric:"Crepe viscose · unlined, breathable", fit:"Wrap front · midi length · model is 5′6″ and wears size S", care:"Gentle machine wash cold · line dry in shade"},
+ {id:"meadow-floral-maxi-dress", sku:"TNB-DR-004", name:"Meadow Floral Maxi Dress", cat:"dresses", price:1899, mrp:2999, rating:4.4, reviews:57, badge:"SALE", isNew:false, bestseller:false,
+  colors:[["Teal Bloom","#1f5f5b"]], sizes:SIZES, stock:{XS:0,S:5,M:8,L:2,XL:3},
+  img:"assets/img-07.jpg", img2:"assets/img-07.jpg",
+  desc:"Vintage roses on deep teal, with a smocked bodice and swishy tiered skirt. The dress you will reach for all summer.",
+  fabric:"Rayon challis · partial lining", fit:"Relaxed bodice · maxi length · model is 5′5″ and wears size S", care:"Machine wash cold, gentle · do not bleach"},
+ {id:"azure-rose-midi-dress", sku:"TNB-DR-005", name:"Azure Rose Midi Dress", cat:"dresses", price:2199, mrp:3499, rating:4.7, reviews:81, badge:"", isNew:true, bestseller:true,
+  colors:[["Azure","#274b73"],["Teal Bloom","#1f5f5b"]], sizes:SIZES, stock:{XS:6,S:10,M:9,L:7,XL:5},
+  img:"assets/img-08.jpg", img2:"assets/img-08.jpg",
+  desc:"Painterly roses scattered across deep azure, with balloon sleeves and a sash waist. Seaside lunches, city evenings — it does both.",
+  fabric:"Georgette · fully lined skirt", fit:"Sash waist · midi length · model is 5′8″ and wears size M", care:"Dry clean recommended"},
+ {id:"ivory-meadow-dress", sku:"TNB-DR-006", name:"Ivory Meadow Dress", cat:"dresses", price:2299, mrp:3299, rating:4.6, reviews:43, badge:"NEW", isNew:true, bestseller:false,
+  colors:[["Ivory","#f2ead9"]], sizes:SIZES, stock:{XS:4,S:7,M:6,L:3,XL:2},
+  img:"assets/img-09.jpg", img2:"assets/img-09.jpg",
+  desc:"Broderie anglaise with lantern sleeves and a sun-washed, barefoot feel. Cut from breathable cotton for the longest days of the year.",
+  fabric:"100% cotton broderie · cotton lining", fit:"Fit-and-flare · above-knee length · model is 5′7″ and wears size S", care:"Machine wash cold · warm iron"},
+ {id:"leather-mini-bag", sku:"TNB-AC-001", name:"Leather Mini Bag", cat:"accessories", price:2499, mrp:3999, rating:4.7, reviews:116, badge:"BESTSELLER", isNew:false, bestseller:true,
+  colors:[["Cognac","#8a4f2a"],["Black","#26211d"]], sizes:["One Size"], stock:{"One Size":14},
+  img:"assets/img-10.jpg", img2:"assets/img-10.jpg",
+  desc:"A structured mini in full-grain leather that fits phone, cards and your favourite lipstick. Carry by the top handles or wear crossbody with the detachable strap.",
+  fabric:"Full-grain leather · suede interior · magnetic closure", fit:"18 × 15 × 8 cm · strap drop 55 cm", care:"Wipe with a soft dry cloth · leather balm monthly"},
+ {id:"sculpted-leather-tote", sku:"TNB-AC-002", name:"Sculpted Leather Tote", cat:"accessories", price:3999, mrp:5999, rating:4.8, reviews:74, badge:"", isNew:true, bestseller:true,
+  colors:[["Taupe","#b3a08c"],["Cognac","#8a4f2a"]], sizes:["One Size"], stock:{"One Size":9},
+  img:"assets/img-11.webp", img2:"assets/img-12.webp",
+  desc:"Pebbled leather, clean lines, room for a 13″ laptop and everything around it. Twin handles plus a shoulder strap, with a zipped interior pocket.",
+  fabric:"Pebbled full-grain leather · cotton twill lining", fit:"38 × 30 × 13 cm · fits 13″ laptop", care:"Wipe clean · stuff to retain shape when stored"},
+ {id:"heritage-gold-necklace-set", sku:"TNB-AC-003", name:"Heritage Gold Necklace Set", cat:"accessories", price:4999, mrp:7999, rating:4.9, reviews:38, badge:"", isNew:false, bestseller:false,
+  colors:[["Antique Gold","#c9962e"]], sizes:["One Size"], stock:{"One Size":6},
+  img:"assets/img-13.jpg", img2:"assets/img-13.jpg",
+  desc:"Hand-finished filigree with enamel accents, inspired by temple jewellery of the South. Necklace and matching jhumka earrings, presented in a keepsake box.",
+  fabric:"Gold-plated brass · enamel work · nickel-safe posts", fit:"Necklace 45 cm + 5 cm extender", care:"Keep dry · store in the pouch provided"},
+ {id:"filigree-gold-choker-set", sku:"TNB-AC-004", name:"Filigree Gold Choker Set", cat:"accessories", price:3499, mrp:5499, rating:4.6, reviews:29, badge:"SALE", isNew:false, bestseller:false,
+  colors:[["Antique Gold","#c9962e"]], sizes:["One Size"], stock:{"One Size":11},
+  img:"assets/img-14.jpg", img2:"assets/img-14.jpg",
+  desc:"A sculpted floral choker with matching drop earrings — intricate openwork that catches the light with every turn.",
+  fabric:"Gold-plated alloy · hand-set enamel", fit:"Choker 40 cm + extender", care:"Avoid perfume contact · wipe after wear"},
+ {id:"blossom-eclat-parfum", sku:"TNB-PF-001", name:"Blossom Éclat Eau de Parfum", cat:"perfumes", price:1999, mrp:2999, rating:4.8, reviews:203, badge:"BESTSELLER", isNew:true, bestseller:true,
+  colors:[["50 ml","#e8b7a5"]], sizes:["50 ml","100 ml"], stock:{"50 ml":22,"100 ml":13},
+  img:"assets/img-15.jpg", img2:"assets/img-15.jpg",
+  desc:"Apple blossom and peony over a whisper of white musk — the scent of a garden just after rain. Our signature fragrance, blended in small batches.",
+  fabric:"Eau de parfum · 18% concentration · notes: apple blossom, peony, white musk", fit:"50 ml / 100 ml glass flacon", care:"Store away from heat and direct light"},
+ {id:"orchid-veil-parfum", sku:"TNB-PF-002", name:"Orchid Veil Eau de Parfum", cat:"perfumes", price:1799, mrp:2699, rating:4.5, reviews:97, badge:"", isNew:false, bestseller:true,
+  colors:[["50 ml","#e6ddc8"]], sizes:["50 ml","100 ml"], stock:{"50 ml":18,"100 ml":0},
+  img:"assets/img-16.jpg", img2:"assets/img-16.jpg",
+  desc:"Pale orchid, green tea and a clean mineral base. Quiet, luminous and endlessly wearable — a veil rather than a statement.",
+  fabric:"Eau de parfum · 15% concentration · notes: orchid, green tea, mineral musk", fit:"50 ml / 100 ml glass flacon", care:"Store away from heat and direct light"},
+];
+const byId = id => PRODUCTS.find(p=>p.id===id);
+const fmt = n => "₹" + n.toLocaleString("en-IN");
+const offPct = p => Math.round((1 - p.price/p.mrp)*100);
+const totalStock = p => Object.values(p.stock).reduce((a,b)=>a+b,0);
+
+/* ============================== STATE ============================== */
+let cart = [];            // {id,size,color,qty}
+let wishlist = new Set();
+let orders = [];          // placed this session
+let lastOrder = null;
+let route = {view:"home"};
+let shopState = {collection:"all", sizes:new Set(), cats:new Set(), colors:new Set(), maxPrice:6000, availOnly:false, sort:"featured", query:""};
+const FREE_MSG = n => n>0 ? `You are <b>${fmt(n)} away</b> from free shipping.` : `You have unlocked <b>free shipping</b>.`;
+
+/* ============================== HELPERS ============================== */
+const $ = s => document.querySelector(s);
+const view = $("#view");
+function esc(s){return String(s).replace(/&/g,"&amp;").replace(/</g,"&lt;")}
+function toast(html){const t=$("#toast");t.innerHTML=html;t.classList.add("show");clearTimeout(t._h);t._h=setTimeout(()=>t.classList.remove("show"),2600)}
+function stars(r){const f=Math.round(r);return "★★★★★".slice(0,f)+"☆☆☆☆☆".slice(0,5-f)}
+function cartCount(){return cart.reduce((a,i)=>a+i.qty,0)}
+function cartSubtotal(){return cart.reduce((a,i)=>a+byId(i.id).price*i.qty,0)}
+function syncBadges(){
+  const cc=cartCount(), wc=wishlist.size;
+  $("#bagCount").hidden=cc===0; $("#bagCount").textContent=cc;
+  $("#wishCount").hidden=wc===0; $("#wishCount").textContent=wc;
+}
+function shipFor(subtotal){return subtotal===0||subtotal>=FREE_SHIP?0:SHIP_FEE}
+
+/* ============================== ROUTER ============================== */
+function parseRoute(){
+  const h = location.hash.replace(/^#\/?/,"");
+  const parts = h.split("/").filter(Boolean);
+  if(parts.length===0) return {view:"home"};
+  if(parts[0]==="shop") return {view:"shop", collection:parts[1]||"all"};
+  if(parts[0]==="product") return {view:"product", id:parts[1]};
+  if(parts[0]==="policy") return {view:"policy", slug:parts[1]};
+  return {view:parts[0]};
+}
+function render(){
+  route = parseRoute();
+  closeAllOverlays();
+  const v = route.view;
+  if(v==="home") renderHome();
+  else if(v==="shop") renderShop(route.collection);
+  else if(v==="product") renderProduct(route.id);
+  else if(v==="wishlist") renderWishlist();
+  else if(v==="cart") renderCart();
+  else if(v==="checkout") renderCheckout();
+  else if(v==="confirmation") renderConfirmation();
+  else if(v==="account") renderAccount();
+  else if(v==="admin") renderAdmin();
+  else if(v==="about") renderAbout();
+  else if(v==="contact") renderContact();
+  else if(v==="track") renderTrack();
+  else if(v==="policy") renderPolicy(route.slug);
+  else renderHome();
+  syncBadges();
+  window.scrollTo({top:0});
+  view.focus({preventScroll:true});
+}
+window.addEventListener("hashchange", render);
+document.addEventListener("click", e=>{
+  const a = e.target.closest("[data-nav]");
+  if(a){ closeAllOverlays(); }
+});
+function closeAllOverlays(){
+  $("#mobileDrawer").classList.remove("open");
+  $("#searchbar").classList.remove("open");
+  $("#modal").classList.remove("open");
+  $("#sizePop").classList.remove("open");
+  $("#stickyBar").classList.remove("show");
+}
+
+/* ============================== CARDS ============================== */
+function cardHTML(p){
+  const wished = wishlist.has(p.id);
+  const stock = totalStock(p);
+  const badge = p.badge ? `<span class="badge ${p.badge==="SALE"?"sale":""}">${p.badge==="SALE"?"Sale −"+offPct(p)+"%":p.badge}</span>` : "";
+  const colorNote = p.colors.length>1 ? `<div class="swatches">${p.colors.map(c=>`<span class="swatch" style="background:${c[1]}" title="${c[0]}"></span>`).join("")}<span class="swatch-note">${p.colors.length} colours</span></div>` : "";
+  const stockNote = stock===0 ? `<div class="stock-note">Out of stock</div>` : (stock<=5 ? `<div class="stock-note">Only ${stock} left</div>` : `<div class="stock-note ok">In stock</div>`);
+  return `<article class="card">
+    <div class="ph" data-open="${p.id}">
+      <img src="${p.img}" alt="${esc(p.name)} by बूटी & BLOOM" />
+      ${badge}
+      <button class="heart ${wished?"active":""}" data-wish="${p.id}" aria-label="${wished?"Remove from":"Add to"} wishlist ${esc(p.name)}">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><path d="M12 20.5C7 16.5 3.5 13.3 3.5 9.6 3.5 7 5.4 5 7.8 5c1.7 0 3.2.9 4.2 2.3C13 5.9 14.5 5 16.2 5c2.4 0 4.3 2 4.3 4.6 0 3.7-3.5 6.9-8.5 10.9Z"/></svg>
+      </button>
+      ${stock>0?`<button class="quickadd" data-quick="${p.id}">Quick Add</button>`:""}
+    </div>
+    <div class="meta">
+      <h3 data-open="${p.id}">${p.name}</h3>
+      <div class="price-row"><span class="price">${fmt(p.price)}</span>${p.mrp>p.price?`<span class="mrp">${fmt(p.mrp)}</span><span class="off">${offPct(p)}% off</span>`:""}</div>
+      ${colorNote}${stockNote}
+    </div>
+  </article>`;
+}
+function bindCards(scope){
+  scope.querySelectorAll("[data-open]").forEach(el=>el.addEventListener("click",e=>{
+    if(e.target.closest("[data-wish],[data-quick]"))return;
+    location.hash = "#/product/"+el.dataset.open;
+  }));
+  scope.querySelectorAll("[data-wish]").forEach(b=>b.addEventListener("click",()=>toggleWish(b.dataset.wish)));
+  scope.querySelectorAll("[data-quick]").forEach(b=>b.addEventListener("click",()=>openQuickAdd(b.dataset.quick)));
+}
+function toggleWish(id){
+  const p = byId(id);
+  if(wishlist.has(id)){ wishlist.delete(id); toast(`Removed <b>${esc(p.name)}</b> from your wishlist`); }
+  else { wishlist.add(id); toast(`Saved <b>${esc(p.name)}</b> to your wishlist`); }
+  syncBadges(); render();
+}
+function openQuickAdd(id){
+  const p = byId(id);
+  const sheet = $("#sizePopSheet");
+  sheet.innerHTML = `<h3 style="font-size:1.3rem;margin-bottom:4px">${esc(p.name)}</h3>
+    <p style="color:var(--muted);margin:0 0 16px;font-size:.88rem">Select ${p.cat==="dresses"?"a size":"an option"} to add to your bag</p>
+    <div class="pill-row">${p.sizes.map(s=>`<button class="size-btn" data-qs="${s}" ${p.stock[s]===0?"disabled":""}>${s}</button>`).join("")}</div>
+    <button class="btn ghost block" data-close-sizepop style="margin-top:18px">Cancel</button>`;
+  $("#sizePop").classList.add("open");
+  sheet.querySelectorAll("[data-qs]").forEach(b=>b.addEventListener("click",()=>{
+    addToCart(id, b.dataset.qs, p.colors[0][0], 1);
+    $("#sizePop").classList.remove("open");
+  }));
+  sheet.querySelector("[data-close-sizepop]").addEventListener("click",()=>$("#sizePop").classList.remove("open"));
+}
+function addToCart(id,size,color,qty){
+  const line = cart.find(i=>i.id===id&&i.size===size&&i.color===color);
+  if(line) line.qty+=qty; else cart.push({id,size,color,qty});
+  syncBadges();
+  toast(`Added to bag — <b>${esc(byId(id).name)}</b> · ${size}`);
+}
+
+/* ============================== HOME ============================== */
+function renderHome(){
+  const newArrivals = PRODUCTS.filter(p=>p.isNew).slice(0,4);
+  const na = newArrivals.length===4 ? newArrivals : PRODUCTS.slice(0,4);
+  const best = PRODUCTS.filter(p=>p.bestseller).slice(0,8);
+  view.innerHTML = `
+  <section class="hero">
+    <img class="bg" src="assets/img-17.webp" alt="Model wearing a champagne silk midi dress among burgundy blooms" />
+    <div class="veil"></div>
+    <div class="hero-in">
+      <span class="kicker">New Season · Now Live</span>
+      <h1>Effortlessly<br/>You</h1>
+      <p>Modern silhouettes. Timeless elegance. Pieces designed to bloom with you, season after season.</p>
+      <div class="hero-cta">
+        <a class="btn light" href="#/shop/women" data-nav>Shop Women</a>
+        <a class="btn ghost" style="color:#fdf6ea;border-color:#fdf6ea" href="#/shop/new-in" data-nav>Explore New Collection</a>
+      </div>
+    </div>
+  </section>
+  <div class="sale-strip">Sale · Up to 50% off &nbsp;—&nbsp; <b>Shop the edit</b></div>
+
+  <section class="section wrap">
+    <div class="section-head">
+      <span class="kicker">Just Landed</span>
+      <h2>New Arrivals</h2>
+      <p>Discover pieces made to be lived in.</p>
+      <p style="margin-top:14px"><a class="btn ghost sm" href="#/shop/new-in" data-nav>Shop New Arrivals</a></p>
+    </div>
+    <div class="grid">${na.map(cardHTML).join("")}</div>
+  </section>
+
+  <section class="section wrap" style="padding-top:0">
+    <div class="tiles">
+      <div class="tile" data-goto="#/shop/dresses"><img src="assets/img-06.jpg" alt="Woman in a scarlet wrap dress"/><div class="tile-in"><h3>Dresses</h3><span>Shop Now</span></div></div>
+      <div class="tile" data-goto="#/shop/accessories"><img src="assets/img-10.jpg" alt="Cognac leather mini bag"/><div class="tile-in"><h3>Accessories</h3><span>Shop Now</span></div></div>
+      <div class="tile" data-goto="#/shop/perfumes"><img src="assets/img-18.jpg" alt="बूटी and BLOOM perfume bottles in pastel tones"/><div class="tile-in"><h3>Perfumes</h3><span>Shop Now</span></div></div>
+      <div class="tile" data-goto="#/shop/sale"><img src="assets/img-05.jpg" alt="Woman in a black satin evening dress"/><div class="tile-in"><h3>Sale</h3><span>Shop Now</span></div></div>
+    </div>
+  </section>
+
+  <section class="section wrap" style="padding-top:0">
+    <div class="split">
+      <div class="imgbox"><img src="assets/img-08.jpg" alt="Woman in an azure rose midi dress by the sea"/></div>
+      <div>
+        <span class="kicker">The Editorial</span>
+        <h2>The Art of Everyday Elegance</h2>
+        <p>We design in the space between occasion and everyday — dresses that hold their own at a gallery opening and a grocery run alike. Considered fabrics, honest construction, and silhouettes that flatter without effort.</p>
+        <p>Every बूटी &amp; BLOOM piece is made to be worn on repeat, styled a dozen ways, and loved for years.</p>
+        <p style="margin-top:20px"><a class="link-arrow" href="#/shop/dresses" data-nav>Shop the Editorial</a></p>
+      </div>
+    </div>
+  </section>
+
+  <section class="section wrap" style="padding-top:0">
+    <div class="section-head">
+      <span class="kicker">Most Loved</span>
+      <h2>Best Sellers</h2>
+      <p>The pieces our customers return for, again and again.</p>
+    </div>
+    <div class="grid">${best.map(cardHTML).join("")}</div>
+  </section>
+
+  <section class="section wrap" style="padding-top:0">
+    <div class="split">
+      <div>
+        <span class="kicker">Our Story</span>
+        <h2>Made to Bloom With You</h2>
+        <p>बूटी &amp; BLOOM celebrates modern femininity through thoughtful silhouettes, refined details and timeless design — a modern label with an Indian soul.</p>
+        <p style="margin-top:18px"><a class="btn ghost" href="#/about" data-nav>Discover Our Story</a></p>
+        <div class="values">
+          <div class="value">Craft</div><div class="value">Comfort</div><div class="value">Conscious Choices</div><div class="value">Personal Expression</div>
+        </div>
+      </div>
+      <div class="imgbox tall"><img src="assets/img-09.jpg" alt="Woman in an ivory broderie dress in a wheat field"/></div>
+    </div>
+  </section>
+
+  <section class="section wrap" style="padding-top:0">
+    <div class="section-head">
+      <span class="kicker">Follow Along</span>
+      <h2>@bootiandbloom</h2>
+      <p>Tag <b style="color:var(--wine);font-weight:500">#InBloom</b> to be featured.</p>
+    </div>
+    <div class="ig-row">
+      <div class="ig"><img src="assets/img-04.jpg" alt="Silk blend midi dress detail"/></div>
+      <div class="ig"><img src="assets/img-15.jpg" alt="Blossom Eclat parfum with apple blossom"/></div>
+      <div class="ig"><img src="assets/img-12.webp" alt="Sculpted leather tote"/></div>
+      <div class="ig"><img src="assets/img-07.jpg" alt="Meadow floral maxi dress in a field"/></div>
+      <div class="ig"><img src="assets/img-13.jpg" alt="Heritage gold necklace set"/></div>
+    </div>
+  </section>
+
+  <section class="section newsletter">
+    <div class="wrap newsletter-in">
+      <span class="kicker">The Bloom List</span>
+      <h2>Stay in the Bloom</h2>
+      <p>Receive new collection announcements and exclusive offers — never more than twice a month.</p>
+      <form class="nl-form" id="nlForm">
+        <input type="email" id="nlEmail" placeholder="Enter your email" aria-label="Email address" />
+        <button type="submit">Subscribe</button>
+      </form>
+      <p class="form-msg" id="nlMsg"></p>
+    </div>
+  </section>`;
+  bindCards(view);
+  view.querySelectorAll("[data-goto]").forEach(el=>el.addEventListener("click",()=>{location.hash=el.dataset.goto}));
+  $("#nlForm").addEventListener("submit",e=>{
+    e.preventDefault();
+    const em = $("#nlEmail").value.trim();
+    const msg = $("#nlMsg");
+    if(!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(em)){ msg.style.color="var(--err)"; msg.textContent="Please enter a valid email address."; return; }
+    msg.style.color="var(--ok)";
+    msg.innerHTML = `Welcome to the Bloom List — a confirmation is on its way to <b>${esc(em)}</b>.`;
+    $("#nlEmail").value="";
+  });
+}
+
+/* ============================== SHOP / LISTING ============================== */
+const COLLECTIONS = {
+  "all":{title:"Shop All", sub:"The complete बूटी & BLOOM collection — dresses, accessories and fragrance."},
+  "women":{title:"Women", sub:"Effortless silhouettes designed for every occasion."},
+  "new-in":{title:"New In", sub:"The latest arrivals from the new season collection."},
+  "dresses":{title:"Dresses", sub:"Discover our collection of effortless silhouettes designed for every occasion."},
+  "accessories":{title:"Accessories", sub:"The finishing touch — bags, jewellery and more."},
+  "perfumes":{title:"Perfumes", sub:"Signature scents, blended in small batches."},
+  "sale":{title:"Sale", sub:"Limited-time pieces at special prices. When they are gone, they are gone."},
+};
+function collectionProducts(key){
+  if(key==="dresses") return PRODUCTS.filter(p=>p.cat==="dresses");
+  if(key==="accessories") return PRODUCTS.filter(p=>p.cat==="accessories");
+  if(key==="perfumes") return PRODUCTS.filter(p=>p.cat==="perfumes");
+  if(key==="new-in") return PRODUCTS.filter(p=>p.isNew);
+  if(key==="sale") return PRODUCTS.filter(p=>p.mrp>p.price);
+  if(key==="women") return PRODUCTS.filter(p=>p.cat==="dresses"||p.cat==="accessories");
+  return PRODUCTS.slice();
+}
+function renderShop(collection){
+  const meta = COLLECTIONS[collection]||COLLECTIONS.all;
+  shopState.collection = collection;
+  const base = shopState.query ? PRODUCTS.filter(p=>(p.name+" "+p.cat+" "+p.colors.map(c=>c[0]).join(" ")).toLowerCase().includes(shopState.query.toLowerCase())) : collectionProducts(collection);
+  const allColors = [...new Set(PRODUCTS.flatMap(p=>p.colors.map(c=>c[0])))];
+  const colorHex = {}; PRODUCTS.forEach(p=>p.colors.forEach(c=>colorHex[c[0]]=c[1]));
+  view.innerHTML = `
+  <div class="wrap">
+    <div class="crumbs"><a href="#/" data-nav>Home</a> / ${shopState.query?`Search`:`<a href="#/shop/women" data-nav>Women</a> / ${meta.title}`}</div>
+    <div class="list-head">
+      <span class="kicker">बूटी &amp; BLOOM Collection</span>
+      <h1>${shopState.query?`Results for “${esc(shopState.query)}”`:meta.title}</h1>
+      <p>${shopState.query?"":meta.sub}</p>
+    </div>
+    <div class="list-layout">
+      <aside class="filters" id="filtersPanel">
+        <div style="display:flex;justify-content:space-between;align-items:center">
+          <h4 style="margin:0">Filters</h4>
+          <button class="remove-link" id="filterClose" style="display:none">Close</button>
+        </div>
+        <div class="fgroup"><h4>Category</h4>
+          ${["dresses","accessories","perfumes"].map(c=>`<label class="fcheck"><input type="checkbox" data-fcat="${c}" ${shopState.cats.has(c)?"checked":""}/> ${c[0].toUpperCase()+c.slice(1)} <span class="n">${PRODUCTS.filter(p=>p.cat===c).length}</span></label>`).join("")}
+        </div>
+        <div class="fgroup"><h4>Size</h4>
+          ${SIZES.map(s=>`<label class="fcheck"><input type="checkbox" data-fsize="${s}" ${shopState.sizes.has(s)?"checked":""}/> ${s}</label>`).join("")}
+        </div>
+        <div class="fgroup"><h4>Colour</h4>
+          ${allColors.map(c=>`<label class="fcheck"><input type="checkbox" data-fcolor="${esc(c)}" ${shopState.colors.has(c)?"checked":""}/> <span class="swatch" style="background:${colorHex[c]}"></span> ${esc(c)}</label>`).join("")}
+        </div>
+        <div class="fgroup"><h4>Max Price</h4>
+          <div class="price-range"><span style="font-size:.85rem;color:var(--muted)">Up to</span><input type="number" id="fPrice" min="500" max="6000" step="100" value="${shopState.maxPrice}" aria-label="Maximum price"/></div>
+        </div>
+        <div class="fgroup"><h4>Availability</h4>
+          <label class="fcheck"><input type="checkbox" id="fAvail" ${shopState.availOnly?"checked":""}/> In stock only</label>
+        </div>
+        <button class="clear-filters" id="clearFilters">Clear all filters</button>
+      </aside>
+      <div>
+        <div class="toolbar">
+          <span style="display:flex;gap:10px;align-items:center">
+            <button class="filter-btn" id="filterOpen">Filters</button>
+            <span class="count" id="prodCount"></span>
+          </span>
+          <label style="font-size:.8rem;letter-spacing:.14em;text-transform:uppercase;color:var(--muted)">Sort by
+            <select id="sortSel" aria-label="Sort products">
+              <option value="featured">Featured</option>
+              <option value="price-asc">Price: Low to High</option>
+              <option value="price-desc">Price: High to Low</option>
+              <option value="newest">Newest</option>
+              <option value="rating">Top Rated</option>
+            </select>
+          </label>
+        </div>
+        <div class="grid" id="shopGrid" style="grid-template-columns:repeat(3,1fr)"></div>
+        <div id="shopEmpty"></div>
+      </div>
+    </div>
+  </div>`;
+  $("#sortSel").value = shopState.sort;
+  const draw = () => {
+    let list = base.filter(p=>{
+      if(shopState.cats.size && !shopState.cats.has(p.cat)) return false;
+      if(shopState.sizes.size && ![...shopState.sizes].some(s=>(p.stock[s]||0)>0)) return false;
+      if(shopState.colors.size && !p.colors.some(c=>shopState.colors.has(c[0]))) return false;
+      if(p.price > shopState.maxPrice) return false;
+      if(shopState.availOnly && totalStock(p)===0) return false;
+      return true;
+    });
+    if(shopState.sort==="price-asc") list.sort((a,b)=>a.price-b.price);
+    else if(shopState.sort==="price-desc") list.sort((a,b)=>b.price-a.price);
+    else if(shopState.sort==="rating") list.sort((a,b)=>b.rating-a.rating);
+    else if(shopState.sort==="newest") list.sort((a,b)=>(b.isNew-a.isNew));
+    else list.sort((a,b)=>(b.bestseller-a.bestseller)||(b.rating-a.rating));
+    $("#prodCount").textContent = `${list.length} Product${list.length===1?"":"s"}`;
+    $("#shopGrid").innerHTML = list.map(cardHTML).join("");
+    $("#shopEmpty").innerHTML = list.length? "" : `<div class="empty-state"><h3>Nothing matches those filters</h3><p>Try widening your price range or clearing a filter or two.</p><p style="margin-top:16px"><button class="btn ghost sm" onclick="document.getElementById('clearFilters').click()">Clear Filters</button></p></div>`;
+    bindCards($("#shopGrid"));
+  };
+  draw();
+  view.querySelectorAll("[data-fcat]").forEach(i=>i.addEventListener("change",()=>{i.checked?shopState.cats.add(i.dataset.fcat):shopState.cats.delete(i.dataset.fcat);draw()}));
+  view.querySelectorAll("[data-fsize]").forEach(i=>i.addEventListener("change",()=>{i.checked?shopState.sizes.add(i.dataset.fsize):shopState.sizes.delete(i.dataset.fsize);draw()}));
+  view.querySelectorAll("[data-fcolor]").forEach(i=>i.addEventListener("change",()=>{i.checked?shopState.colors.add(i.dataset.fcolor):shopState.colors.delete(i.dataset.fcolor);draw()}));
+  $("#fPrice").addEventListener("change",e=>{shopState.maxPrice=+e.target.value||6000;draw()});
+  $("#fAvail").addEventListener("change",e=>{shopState.availOnly=e.target.checked;draw()});
+  $("#sortSel").addEventListener("change",e=>{shopState.sort=e.target.value;draw()});
+  $("#clearFilters").addEventListener("click",()=>{shopState.sizes.clear();shopState.cats.clear();shopState.colors.clear();shopState.maxPrice=6000;shopState.availOnly=false;shopState.query="";render()});
+  const fp=$("#filtersPanel");
+  $("#filterOpen").addEventListener("click",()=>{fp.classList.add("open");$("#filterClose").style.display="inline"});
+  $("#filterClose").addEventListener("click",()=>fp.classList.remove("open"));
+}
+
+/* ============================== PRODUCT PAGE ============================== */
+const REVIEWS_POOL = [
+ {name:"Ananya S.", stars:5, title:"Even better in person", text:"The fabric has the most beautiful fall and the colour is exactly as pictured. Wore it to a brunch and got compliments all day."},
+ {name:"Meera K.", stars:5, title:"My third बूटी & BLOOM piece", text:"Fits true to size and feels far more expensive than it is. The finishing is impeccable — no loose threads, clean seams."},
+ {name:"Priya R.", stars:4, title:"Lovely, size up if between sizes", text:"Beautiful quality and it arrived in three days, nicely packed. I am between sizes and the larger one drapes better on me."},
+ {name:"Kavita D.", stars:5, title:"Effortless elegance", text:"This is exactly the kind of piece I keep reaching for. It works with heels and with flats, which is rare."},
+];
+let pdpState = {size:null,color:null,qty:1,img:0};
+function renderProduct(id){
+  const p = byId(id) || PRODUCTS[0];
+  pdpState = {size:null,color:p.colors[0][0],qty:1,img:0};
+  const stock = totalStock(p);
+  const rel = PRODUCTS.filter(x=>x.cat===p.cat && x.id!==p.id).slice(0,4);
+  const relFill = rel.length<4 ? rel.concat(PRODUCTS.filter(x=>x.id!==p.id&&!rel.includes(x)).slice(0,4-rel.length)) : rel;
+  const reviews = REVIEWS_POOL.slice(0,3);
+  const imgs = [...new Set([p.img,p.img2])];
+  view.innerHTML = `
+  <div class="wrap">
+    <div class="crumbs"><a href="#/" data-nav>Home</a> / <a href="#/shop/${p.cat}" data-nav>${p.cat[0].toUpperCase()+p.cat.slice(1)}</a> / ${esc(p.name)}</div>
+    <div class="pdp">
+      <div class="gallery">
+        <div class="main-img"><img id="pdpMain" src="${imgs[0]}" alt="${esc(p.name)} by बूटी & BLOOM"/></div>
+        ${imgs.length>1?`<div class="thumbs">${imgs.map((s,i)=>`<button class="${i===0?"sel":""}" data-thumb="${i}" aria-label="View image ${i+1}"><img src="${s}" alt=""/></button>`).join("")}</div>`:""}
+      </div>
+      <div class="pdp-info">
+        <span class="sku">SKU ${p.sku} · ${p.cat.slice(0,-1).toUpperCase()}</span>
+        <h1>${p.name}</h1>
+        <div class="rating-row"><span class="stars">${stars(p.rating)}</span><span><b style="font-weight:500">${p.rating}</b> · ${p.reviews} reviews</span></div>
+        <div class="pdp-price"><span class="price">${fmt(p.price)}</span>${p.mrp>p.price?`<span class="mrp">MRP ${fmt(p.mrp)}</span><span class="off">${offPct(p)}% off</span>`:""}</div>
+        <div class="tax-note">MRP inclusive of all taxes</div>
+
+        <div class="opt-label">Colour — <span id="colorName" style="letter-spacing:.04em;text-transform:none;color:var(--ink-soft)">${p.colors[0][0]}</span></div>
+        <div class="pill-row">${p.colors.map((c,i)=>`<button class="swatch-lg ${i===0?"sel":""}" style="background:${c[1]}" data-color="${esc(c[0])}" aria-label="Colour ${esc(c[0])}"></button>`).join("")}</div>
+
+        <div class="opt-label">${p.cat==="dresses"?"Size":"Option"} <button id="sizeGuideBtn" type="button">Size Guide</button></div>
+        <div class="pill-row" id="sizeRow">${p.sizes.map(s=>`<button class="size-btn" data-size="${s}" ${p.stock[s]===0?"disabled":""}>${s}</button>`).join("")}</div>
+        <p id="sizeHint" style="font-size:.82rem;color:var(--err);min-height:1.1em;margin:8px 0 0"></p>
+
+        <div class="opt-label">Quantity</div>
+        <div class="qty-ctrl"><button id="qMinus" aria-label="Decrease quantity">−</button><span id="qVal">1</span><button id="qPlus" aria-label="Increase quantity">+</button></div>
+        <p style="font-size:.84rem;margin:10px 0 0" class="${stock<=5?"stock-note":"stock-note ok"}" >${stock===0?"Out of stock — join the waitlist in store":stock<=5?`Only ${stock} left in stock`:"In stock · ships in 24 hours"}</p>
+
+        <div class="pdp-actions">
+          <button class="btn" id="addBag" ${stock===0?"disabled":""}>Add to Bag</button>
+          <button class="btn ghost wish-btn" id="pdpWish">${wishlist.has(p.id)?"♥ In Wishlist":"♡ Wishlist"}</button>
+        </div>
+
+        <div class="opt-label" style="margin-top:26px">Delivery</div>
+        <div class="pin-row"><input id="pinInput" inputmode="numeric" maxlength="6" placeholder="Enter PIN code" aria-label="PIN code"/><button id="pinBtn" type="button">Check</button></div>
+        <p id="pinMsg" style="font-size:.86rem;color:var(--ink-soft);min-height:1.2em;margin:8px 0 0"></p>
+
+        <div class="trust-row"><div>Free shipping over ₹1,999</div><div>7-day easy returns</div><div>Secure Razorpay checkout</div></div>
+
+        <div class="accordion">
+          <div class="acc-item open"><button type="button">Description <span>+</span></button><div class="acc-body">${p.desc}</div></div>
+          <div class="acc-item"><button type="button">Fabric &amp; Care <span>+</span></button><div class="acc-body"><p style="margin:0 0 8px"><b style="color:var(--ink)">Fabric:</b> ${p.fabric}</p><p style="margin:0"><b style="color:var(--ink)">Care:</b> ${p.care}</p></div></div>
+          <div class="acc-item"><button type="button">Fit &amp; Model <span>+</span></button><div class="acc-body">${p.fit}</div></div>
+          <div class="acc-item"><button type="button">Delivery &amp; Returns <span>+</span></button><div class="acc-body">Dispatched within 24 hours from our Mumbai studio. Delivery in 3–7 business days across India; free shipping on orders above ₹1,999. Unworn pieces with tags can be returned or exchanged within 7 days of delivery.</div></div>
+        </div>
+
+        <div class="reviews">
+          <div class="opt-label" style="margin-top:8px">Reviews · ${p.reviews}</div>
+          ${reviews.map(r=>`<div class="review"><div class="r-head"><span><b style="font-weight:500">${r.name}</b> &nbsp;<span class="stars" style="font-size:.8rem">${stars(r.stars)}</span></span><span class="verified">Verified Buyer</span></div><p><b style="color:var(--ink);font-weight:500">${r.title}</b> — ${r.text}</p></div>`).join("")}
+        </div>
+      </div>
+    </div>
+
+    <section class="section" style="padding-top:20px">
+      <div class="section-head"><span class="kicker">Complete the Look</span><h2 style="font-size:2rem">You May Also Like</h2></div>
+      <div class="grid">${relFill.map(cardHTML).join("")}</div>
+    </section>
+  </div>
+  <div class="sticky-bar" id="stickyBarIn"></div>`;
+  /* bind gallery */
+  view.querySelectorAll("[data-thumb]").forEach(b=>b.addEventListener("click",()=>{
+    view.querySelectorAll("[data-thumb]").forEach(x=>x.classList.remove("sel")); b.classList.add("sel");
+    $("#pdpMain").src = imgs[+b.dataset.thumb];
+  }));
+  view.querySelectorAll("[data-color]").forEach(b=>b.addEventListener("click",()=>{
+    view.querySelectorAll("[data-color]").forEach(x=>x.classList.remove("sel")); b.classList.add("sel");
+    pdpState.color=b.dataset.color; $("#colorName").textContent=b.dataset.color;
+  }));
+  view.querySelectorAll("[data-size]").forEach(b=>b.addEventListener("click",()=>{
+    view.querySelectorAll("[data-size]").forEach(x=>x.classList.remove("sel")); b.classList.add("sel");
+    pdpState.size=b.dataset.size; $("#sizeHint").textContent="";
+  }));
+  $("#qMinus").addEventListener("click",()=>{pdpState.qty=Math.max(1,pdpState.qty-1);$("#qVal").textContent=pdpState.qty});
+  $("#qPlus").addEventListener("click",()=>{pdpState.qty=Math.min(9,pdpState.qty+1);$("#qVal").textContent=pdpState.qty});
+  $("#addBag").addEventListener("click",()=>{
+    if(!pdpState.size){ $("#sizeHint").textContent="Please select a size first."; $("#sizeRow").scrollIntoView({behavior:"smooth",block:"center"}); return; }
+    addToCart(p.id,pdpState.size,pdpState.color,pdpState.qty);
+  });
+  $("#pdpWish").addEventListener("click",()=>{ toggleWish(p.id); });
+  $("#sizeGuideBtn").addEventListener("click",openSizeGuide);
+  $("#pinBtn").addEventListener("click",()=>{
+    const v=$("#pinInput").value.trim(); const m=$("#pinMsg");
+    if(!/^\d{6}$/.test(v)){ m.style.color="var(--err)"; m.textContent="Please enter a valid 6-digit PIN code."; return; }
+    const d=new Date(); d.setDate(d.getDate()+4);
+    const d2=new Date(); d2.setDate(d2.getDate()+6);
+    const f=x=>x.toLocaleDateString("en-IN",{weekday:"short",day:"numeric",month:"short"});
+    m.style.color="var(--ok)"; m.textContent=`Delivery to ${v} by ${f(d)} – ${f(d2)} · Free shipping on orders above ₹1,999 · COD available`;
+  });
+  view.querySelectorAll(".acc-item > button").forEach(b=>b.addEventListener("click",()=>b.parentElement.classList.toggle("open")));
+  bindCards(view);
+  /* sticky add-to-bag */
+  const bar=$("#stickyBarIn");
+  const showBar=()=>{ bar.innerHTML=`<span class="sb-name">${esc(p.name)}</span><span class="sb-price">${fmt(p.price)}</span><button class="btn sm" id="sbAdd">Add to Bag</button>`;
+    bar.querySelector("#sbAdd").addEventListener("click",()=>{
+      if(!pdpState.size){ $("#sizeRow").scrollIntoView({behavior:"smooth",block:"center"}); $("#sizeHint").textContent="Please select a size first."; return; }
+      addToCart(p.id,pdpState.size,pdpState.color,pdpState.qty);
+    }); };
+  const onScroll=()=>{ bar.classList.toggle("show", window.scrollY>700); };
+  showBar();
+  window.addEventListener("scroll", onScroll, {passive:true});
+  const cleanup=()=>window.removeEventListener("scroll",onScroll);
+  window.addEventListener("hashchange", cleanup, {once:true});
+}
+function openSizeGuide(){
+  $("#modalBox").innerHTML=`<h3>Size Guide</h3>
+  <p style="color:var(--ink-soft)">All measurements are body measurements in inches. If you are between sizes, we recommend sizing up for a relaxed drape.</p>
+  <table style="width:100%;border-collapse:collapse;font-size:.9rem">
+    <tr><th style="text-align:left;padding:8px;border:1px solid var(--line)">Size</th><th style="text-align:left;padding:8px;border:1px solid var(--line)">Bust</th><th style="text-align:left;padding:8px;border:1px solid var(--line)">Waist</th><th style="text-align:left;padding:8px;border:1px solid var(--line)">Hip</th></tr>
+    ${[["XS","32","26","36"],["S","34","28","38"],["M","36","30","40"],["L","38","32","42"],["XL","40","34","44"]].map(r=>`<tr>${r.map(c=>`<td style="padding:8px;border:1px solid var(--line)">${c}</td>`).join("")}</tr>`).join("")}
+  </table>
+  <p style="margin-top:16px"><button class="btn ghost sm" data-close-modal>Close</button></p>`;
+  $("#modal").classList.add("open");
+  $("#modalBox").querySelector("[data-close-modal]").addEventListener("click",()=>$("#modal").classList.remove("open"));
+}
+
+/* ============================== WISHLIST ============================== */
+function renderWishlist(){
+  const items=[...wishlist].map(byId).filter(Boolean);
+  view.innerHTML=`<div class="wrap">
+    <div class="list-head"><span class="kicker">Saved Pieces</span><h1 style="font-size:clamp(2rem,4.4vw,3rem);letter-spacing:.16em;text-transform:uppercase;margin:.25em 0">Wishlist</h1>
+    <p>${items.length?`${items.length} piece${items.length===1?"":"s"} saved for later.`:""}</p></div>
+    ${items.length?`<div class="grid" style="padding-bottom:70px">${items.map(p=>cardHTML(p)+``).join("")}</div>
+    <p style="text-align:center;padding-bottom:70px;margin-top:-30px"></p>`
+    :`<div class="empty-state" style="margin-bottom:70px"><h3>Your wishlist is empty</h3><p>Tap the heart on any piece and it will wait for you here.</p><p style="margin-top:16px"><a class="btn" href="#/shop/women" data-nav>Start Shopping</a></p></div>`}
+  </div>`;
+  if(items.length){
+    /* add move-to-bag buttons under each card */
+    const cards=view.querySelectorAll(".card");
+    items.forEach((p,i)=>{
+      const btn=document.createElement("button");
+      btn.className="btn ghost sm"; btn.style.margin="12px 2px 0"; btn.textContent="Move to Bag";
+      btn.addEventListener("click",()=>openQuickAdd(p.id));
+      cards[i].appendChild(btn);
+    });
+  }
+  bindCards(view);
+}
+
+/* ============================== CART ============================== */
+function renderCart(){
+  const sub=cartSubtotal(), ship=shipFor(sub);
+  const itemsHTML = cart.length ? cart.map((i,idx)=>{
+    const p=byId(i.id);
+    return `<div class="cart-item">
+      <img src="${p.img}" alt="${esc(p.name)}"/>
+      <div><h3 data-open="${p.id}">${p.name}</h3>
+        <div class="ci-meta">${esc(i.color)}${i.size?` · Size ${esc(i.size)}`:""} · ${fmt(p.price)}</div>
+        <div class="ci-actions">
+          <span class="qty-ctrl"><button data-dec="${idx}" aria-label="Decrease">−</button><span>${i.qty}</span><button data-inc="${idx}" aria-label="Increase">+</button></span>
+          <button class="remove-link" data-rem="${idx}">Remove</button>
+        </div>
+      </div>
+      <div style="font-weight:500">${fmt(p.price*i.qty)}</div>
+    </div>`;
+  }).join("") : "";
+  view.innerHTML=`<div class="wrap">
+    <div class="list-head"><span class="kicker">Almost Yours</span><h1 style="font-size:clamp(2rem,4.4vw,3rem);letter-spacing:.16em;text-transform:uppercase;margin:.25em 0">Your Bag</h1></div>
+    ${cart.length?`<div class="cart-layout">
+      <div>${itemsHTML}
+        <p style="margin-top:20px"><a class="link-arrow" href="#/shop/women" data-nav>Continue Shopping</a></p>
+      </div>
+      <aside class="summary">
+        <h3>Order Summary</h3>
+        <div class="free-ship"><p>${FREE_MSG(Math.max(0,FREE_SHIP-sub))}</p><div class="progress"><i style="width:${Math.min(100,sub/FREE_SHIP*100)}%"></i></div></div>
+        <div class="sum-row"><span>Subtotal (${cartCount()} item${cartCount()===1?"":"s"})</span><span>${fmt(sub)}</span></div>
+        <div class="sum-row"><span>Shipping</span><span>${ship===0?"Free":fmt(ship)}</span></div>
+        <div class="sum-row"><span>Discount</span><span>—</span></div>
+        <div class="sum-row total"><span>Total</span><span>${fmt(sub+ship)}</span></div>
+        <a class="btn block" href="#/checkout" data-nav style="margin-top:16px">Proceed to Checkout</a>
+        <p style="font-size:.78rem;color:var(--muted);text-align:center;margin:12px 0 0">Secure checkout · Easy 7-day returns</p>
+      </aside>
+    </div>`
+    :`<div class="empty-state" style="margin-bottom:70px"><h3>Your bag is empty</h3><p>Beautiful things are waiting in the new collection.</p><p style="margin-top:16px"><a class="btn" href="#/shop/new-in" data-nav>Shop New Arrivals</a></p></div>`}
+  </div>`;
+  view.querySelectorAll("[data-inc]").forEach(b=>b.addEventListener("click",()=>{cart[+b.dataset.inc].qty++;render()}));
+  view.querySelectorAll("[data-dec]").forEach(b=>b.addEventListener("click",()=>{const i=+b.dataset.dec;cart[i].qty--;if(cart[i].qty<1)cart.splice(i,1);render()}));
+  view.querySelectorAll("[data-rem]").forEach(b=>b.addEventListener("click",()=>{cart.splice(+b.dataset.rem,1);render()}));
+  view.querySelectorAll("[data-open]").forEach(el=>el.addEventListener("click",()=>location.hash="#/product/"+el.dataset.open));
+}
+
+/* ============================== CHECKOUT ============================== */
+let coupon = {code:"", pct:0};
+function renderCheckout(){
+  if(!cart.length){ location.hash="#/cart"; return; }
+  const sub=cartSubtotal(), ship=shipFor(sub);
+  const disc = coupon.pct? Math.round(sub*coupon.pct/100):0;
+  const total = sub - disc + ship;
+  view.innerHTML=`<div class="wrap">
+    <div class="list-head"><span class="kicker">Guest Checkout</span><h1 style="font-size:clamp(2rem,4.4vw,3rem);letter-spacing:.16em;text-transform:uppercase;margin:.25em 0">Checkout</h1>
+    <p>No account needed — create one after your order to track it faster.</p></div>
+    <form id="coForm" novalidate>
+    <div class="cart-layout">
+      <div>
+        <section class="checkout-sec"><h3><span class="step-n">1</span> Contact &amp; Delivery Address</h3>
+          <div class="form-grid">
+            <div class="field"><label>Full Name</label><input name="name" autocomplete="name" placeholder="e.g. Aarohi Sharma"/><span class="err-msg">Please enter your full name.</span></div>
+            <div class="field"><label>Mobile Number</label><input name="mobile" inputmode="numeric" maxlength="10" autocomplete="tel" placeholder="10-digit mobile"/><span class="err-msg">Enter a valid 10-digit mobile number.</span></div>
+            <div class="field full"><label>Email</label><input name="email" type="email" autocomplete="email" placeholder="you@example.com"/><span class="err-msg">Enter a valid email address.</span></div>
+            <div class="field"><label>House / Flat</label><input name="house" placeholder="Flat 4B, Lotus Residency"/><span class="err-msg">Please enter your house/flat.</span></div>
+            <div class="field"><label>Street</label><input name="street" placeholder="MG Road"/><span class="err-msg">Please enter your street.</span></div>
+            <div class="field"><label>City</label><input name="city" placeholder="Mumbai"/><span class="err-msg">Please enter your city.</span></div>
+            <div class="field"><label>State</label><input name="state" placeholder="Maharashtra"/><span class="err-msg">Please enter your state.</span></div>
+            <div class="field"><label>PIN Code</label><input name="pin" inputmode="numeric" maxlength="6" placeholder="400001"/><span class="err-msg">Enter a valid 6-digit PIN code.</span></div>
+            <div class="field"><label>Country</label><input value="India" disabled/></div>
+          </div>
+        </section>
+        <section class="checkout-sec"><h3><span class="step-n">2</span> Payment · via Razorpay</h3>
+          <div class="pay-methods" id="payMethods">
+            <label class="pay-opt sel"><input type="radio" name="pay" value="UPI" checked/><span><b>UPI</b><span>Google Pay, PhonePe, Paytm &amp; more</span></span></label>
+            <label class="pay-opt"><input type="radio" name="pay" value="Card"/><span><b>Credit / Debit Card</b><span>Visa, Mastercard, RuPay</span></span></label>
+            <label class="pay-opt"><input type="radio" name="pay" value="Net Banking"/><span><b>Net Banking</b><span>All major Indian banks</span></span></label>
+            <label class="pay-opt"><input type="radio" name="pay" value="COD"/><span><b>Cash on Delivery</b><span>Pay when your order arrives</span></span></label>
+          </div>
+          <p style="font-size:.8rem;color:var(--muted);margin:14px 0 0">You will be redirected to Razorpay's secure window to complete payment. Card details are never stored on our servers.</p>
+        </section>
+      </div>
+      <aside class="summary">
+        <h3>Order Summary</h3>
+        ${cart.map(i=>{const p=byId(i.id);return `<div class="sum-row"><span>${esc(p.name)} <span style="color:var(--muted)">× ${i.qty}${i.size?` · ${esc(i.size)}`:""}</span></span><span>${fmt(p.price*i.qty)}</span></div>`}).join("")}
+        <div class="coupon-row"><input id="couponInput" placeholder="Coupon code" value="${coupon.code}" aria-label="Coupon code"/><button type="button" id="couponBtn">Apply</button></div>
+        <p id="couponMsg" style="font-size:.8rem;min-height:1.1em;margin:2px 0 6px;color:var(--ok)">${coupon.pct?`Coupon applied — ${coupon.pct}% off`:''}</p>
+        <div class="sum-row"><span>Subtotal</span><span>${fmt(sub)}</span></div>
+        ${disc?`<div class="sum-row"><span>Coupon discount</span><span>− ${fmt(disc)}</span></div>`:""}
+        <div class="sum-row"><span>Shipping</span><span>${ship===0?"Free":fmt(ship)}</span></div>
+        <div class="sum-row total"><span>Total</span><span>${fmt(total)}</span></div>
+        <button class="btn block" type="submit" id="payBtn">Pay ${fmt(total)}</button>
+        <p style="font-size:.78rem;color:var(--muted);text-align:center;margin:12px 0 0">By placing this order you agree to our <a href="#/policy/terms" data-nav style="color:var(--wine)">Terms</a> &amp; <a href="#/policy/refund" data-nav style="color:var(--wine)">Refund Policy</a>.</p>
+      </aside>
+    </div>
+    </form>
+  </div>`;
+  view.querySelectorAll(".pay-opt input").forEach(r=>r.addEventListener("change",()=>{
+    view.querySelectorAll(".pay-opt").forEach(o=>o.classList.remove("sel")); r.closest(".pay-opt").classList.add("sel");
+    $("#payBtn").textContent = (r.value==="COD"?"Place Order · ":"Pay ") + fmt(total);
+  }));
+  $("#couponBtn").addEventListener("click",()=>{
+    const code=$("#couponInput").value.trim().toUpperCase(); const m=$("#couponMsg");
+    const codes={BLOOM10:10,WELCOME15:15};
+    if(codes[code]){ coupon={code,pct:codes[code]}; render(); }
+    else { m.style.color="var(--err)"; m.textContent="That code is not valid. Try BLOOM10 for 10% off."; }
+  });
+  $("#coForm").addEventListener("submit",e=>{
+    e.preventDefault();
+    const f=e.target; let ok=true;
+    const check=(name,test)=>{ const inp=f[name]; const wrap=inp.closest(".field"); const val=inp.value.trim();
+      const good=test(val); wrap.classList.toggle("invalid",!good); if(!good)ok=false; };
+    check("name",v=>v.length>=3);
+    check("mobile",v=>/^\d{10}$/.test(v));
+    check("email",v=>/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(v));
+    check("house",v=>v.length>=2); check("street",v=>v.length>=2);
+    check("city",v=>v.length>=2); check("state",v=>v.length>=2);
+    check("pin",v=>/^\d{6}$/.test(v));
+    if(!ok){ toast("Please review the highlighted fields."); view.querySelector(".field.invalid input")?.scrollIntoView({behavior:"smooth",block:"center"}); return; }
+    const btn=$("#payBtn"); btn.disabled=true; btn.textContent="Processing…";
+    setTimeout(()=>{
+      const orderId="BB"+Math.floor(10000+Math.random()*89999);
+      lastOrder={ id:orderId, items:cart.map(i=>({...i})), sub, disc, ship, total,
+        name:f.name.value.trim(), email:f.email.value.trim(), mobile:f.mobile.value.trim(),
+        city:f.city.value.trim(), state:f.state.value.trim(), pin:f.pin.value.trim(),
+        pay:f.pay.value, placed:new Date(), status:"PAID" };
+      orders.unshift(lastOrder);
+      cart=[]; coupon={code:"",pct:0}; syncBadges();
+      location.hash="#/confirmation";
+    },900);
+  });
+}
+
+/* ============================== CONFIRMATION ============================== */
+function renderConfirmation(){
+  if(!lastOrder){ view.innerHTML=`<div class="wrap"><div class="empty-state" style="margin:70px 0"><h3>No recent order</h3><p>When you place an order, its confirmation will appear here.</p><p style="margin-top:16px"><a class="btn" href="#/shop/women" data-nav>Start Shopping</a></p></div></div>`; return; }
+  const o=lastOrder;
+  const d=new Date(o.placed); d.setDate(d.getDate()+5);
+  const dStr=d.toLocaleDateString("en-IN",{weekday:"long",day:"numeric",month:"long"});
+  view.innerHTML=`<div class="wrap">
+    <div class="confirm-hero">
+      <div class="tick"><svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m4.5 12.5 5 5 10-11"/></svg></div>
+      <span class="kicker">Thank You</span>
+      <h1>Order Confirmed</h1>
+      <p style="color:var(--ink-soft)">Order <b style="color:var(--ink)">${o.id}</b> · Estimated delivery by <b style="color:var(--ink)">${dStr}</b><br/>A confirmation has been sent to ${esc(o.email)} and +91 ${esc(o.mobile)}.</p>
+    </div>
+    <div style="max-width:820px;margin:0 auto;padding-bottom:70px">
+      <div class="track-steps">
+        <div class="ts done">Order Placed<small>${o.placed.toLocaleDateString("en-IN",{day:"numeric",month:"short"})}</small></div>
+        <div class="ts done">Payment ${o.pay==="COD"?"on Delivery":"Confirmed"}<small>${o.pay}</small></div>
+        <div class="ts">Packed<small>Within 24 hours</small></div>
+        <div class="ts">Delivered<small>By ${dStr}</small></div>
+      </div>
+      <section class="checkout-sec">
+        <h3 style="font-family:var(--serif);letter-spacing:.06em;text-transform:none;font-size:1.3rem">Your Pieces</h3>
+        ${o.items.map(i=>{const p=byId(i.id);return `<div class="cart-item"><img src="${p.img}" alt="${esc(p.name)}"/><div><h3>${p.name}</h3><div class="ci-meta">${esc(i.color)}${i.size?` · Size ${esc(i.size)}`:""} · Qty ${i.qty}</div></div><div style="font-weight:500">${fmt(p.price*i.qty)}</div></div>`}).join("")}
+        <div class="sum-row" style="margin-top:14px"><span>Subtotal</span><span>${fmt(o.sub)}</span></div>
+        ${o.disc?`<div class="sum-row"><span>Coupon discount</span><span>− ${fmt(o.disc)}</span></div>`:""}
+        <div class="sum-row"><span>Shipping</span><span>${o.ship===0?"Free":fmt(o.ship)}</span></div>
+        <div class="sum-row total"><span>Paid via ${o.pay}</span><span>${fmt(o.total)}</span></div>
+      </section>
+      <p style="text-align:center;display:flex;gap:12px;justify-content:center;flex-wrap:wrap">
+        <a class="btn" href="#/track" data-nav>Track Order</a>
+        <a class="btn ghost" href="#/shop/women" data-nav>Continue Shopping</a>
+      </p>
+      <p style="text-align:center;color:var(--muted);font-size:.88rem">Create an account with ${esc(o.email)} to track orders faster next time.</p>
+    </div>
+  </div>`;
+}
+
+/* ============================== ACCOUNT / ADMIN / TRACK ============================== */
+function renderAccount(){
+  view.innerHTML=`<div class="wrap" style="padding-bottom:70px">
+    <div class="list-head"><span class="kicker">Welcome Back</span><h1 style="font-size:clamp(2rem,4.4vw,3rem);letter-spacing:.16em;text-transform:uppercase;margin:.25em 0">My Account</h1>
+    <p>Guest checkout is always available — an account simply makes it faster.</p></div>
+    <div class="acct-grid">
+      <div class="acct-card"><h3>My Orders</h3><p>${orders.length?`You have placed ${orders.length} order${orders.length===1?"":"s"} this session.`:"No orders yet. Your orders will appear here after checkout."}</p><a class="link-arrow" href="#/track" data-nav>Track an Order</a></div>
+      <div class="acct-card"><h3>Wishlist</h3><p>${wishlist.size?`${wishlist.size} saved piece${wishlist.size===1?"":"s"} waiting for you.`:"Save pieces with the heart icon and find them here."}</p><a class="link-arrow" href="#/wishlist" data-nav>View Wishlist</a></div>
+      <div class="acct-card"><h3>Addresses &amp; Returns</h3><p>Manage saved addresses, start a return or exchange within 7 days of delivery.</p><a class="link-arrow" href="#/policy/returns" data-nav>Returns &amp; Exchanges</a></div>
+    </div>
+    ${orders.length?`<h2 style="font-size:1.6rem;margin:36px 0 14px">Recent Orders</h2>
+    <div style="overflow-x:auto"><table class="admin"><tr><th>Order</th><th>Items</th><th>Total</th><th>Payment</th><th>Status</th></tr>
+    ${orders.map(o=>`<tr><td><b>${o.id}</b><br/><span style="color:var(--muted);font-size:.8rem">${o.placed.toLocaleDateString("en-IN",{day:"numeric",month:"short",year:"numeric"})}</span></td><td>${o.items.reduce((a,i)=>a+i.qty,0)}</td><td>${fmt(o.total)}</td><td>${o.pay}</td><td><span class="pill paid">${o.status}</span></td></tr>`).join("")}</table></div>`:""}
+    <p style="margin-top:34px;text-align:center"><a class="btn ghost sm" href="#/admin" data-nav>Open Store Manager (Admin Demo)</a></p>
+  </div>`;
+}
+function renderTrack(){
+  const o=lastOrder||orders[0];
+  view.innerHTML=`<div class="wrap" style="padding-bottom:70px">
+    <div class="list-head"><span class="kicker">Delivery Updates</span><h1 style="font-size:clamp(2rem,4.4vw,3rem);letter-spacing:.16em;text-transform:uppercase;margin:.25em 0">Track Order</h1></div>
+    <form id="trackForm" style="max-width:520px;margin:0 auto 30px">
+      <div class="pin-row"><input id="trackInput" placeholder="Enter order ID, e.g. BB10284" aria-label="Order ID"/><button type="submit">Track</button></div>
+      <p class="form-msg" id="trackMsg"></p>
+    </form>
+    <div id="trackResult">${o?trackHTML(o):""}</div>
+  </div>`;
+  $("#trackForm").addEventListener("submit",e=>{
+    e.preventDefault();
+    const v=$("#trackInput").value.trim().toUpperCase();
+    const found=orders.find(x=>x.id===v);
+    const m=$("#trackMsg");
+    if(found){ m.style.color="var(--ok)"; m.textContent="Order found."; $("#trackResult").innerHTML=trackHTML(found); }
+    else { m.style.color="var(--err)"; m.textContent="We could not find that order ID in this session. Orders placed here live in My Account."; $("#trackResult").innerHTML=""; }
+  });
+}
+function trackHTML(o){
+  const d=new Date(o.placed); d.setDate(d.getDate()+5);
+  return `<section class="checkout-sec" style="max-width:820px;margin:0 auto">
+    <h3 style="font-family:var(--serif);letter-spacing:.04em;text-transform:none;font-size:1.35rem">Order ${o.id} · ${o.items.reduce((a,i)=>a+i.qty,0)} item(s) · ${fmt(o.total)}</h3>
+    <div class="track-steps">
+      <div class="ts done">Placed<small>${o.placed.toLocaleDateString("en-IN",{day:"numeric",month:"short"})}</small></div>
+      <div class="ts done">Paid<small>${o.pay}</small></div>
+      <div class="ts">Packed<small>Within 24 hrs</small></div>
+      <div class="ts">Delivered<small>By ${d.toLocaleDateString("en-IN",{day:"numeric",month:"short"})}</small></div>
+    </div>
+    ${o.items.map(i=>{const p=byId(i.id);return `<div class="cart-item"><img src="${p.img}" alt=""/><div><h3>${p.name}</h3><div class="ci-meta">Qty ${i.qty}${i.size?` · Size ${esc(i.size)}`:""}</div></div><div style="font-weight:500">${fmt(p.price*i.qty)}</div></div>`}).join("")}
+  </section>`;
+}
+function renderAdmin(){
+  const revenue = orders.reduce((a,o)=>a+o.total,0);
+  const aov = orders.length? Math.round(revenue/orders.length):0;
+  view.innerHTML=`<div class="wrap" style="padding-bottom:70px">
+    <div class="crumbs"><a href="#/account" data-nav>My Account</a> / Store Manager</div>
+    <div class="list-head" style="text-align:left"><span class="kicker">बूटी &amp; BLOOM · Admin</span>
+    <h1 style="font-size:clamp(1.9rem,4vw,2.7rem);letter-spacing:.14em;text-transform:uppercase;margin:.25em 0">Store Manager</h1>
+    <p>Live view of this storefront's catalogue and the orders placed in this session.</p></div>
+    <div class="stat-grid">
+      <div class="stat"><div class="k">Revenue (Session)</div><div class="v">${fmt(revenue)}</div></div>
+      <div class="stat"><div class="k">Orders (Session)</div><div class="v">${orders.length}</div></div>
+      <div class="stat"><div class="k">Avg. Order Value</div><div class="v">${orders.length?fmt(aov):"—"}</div></div>
+      <div class="stat"><div class="k">Products Live</div><div class="v">${PRODUCTS.length}</div></div>
+    </div>
+    <div class="tabs">
+      <button class="sel" data-atab="products">Products &amp; Inventory</button>
+      <button data-atab="orders">Orders</button>
+      <button data-atab="marketing">Marketing</button>
+    </div>
+    <div id="adminBody"></div>
+  </div>`;
+  const body=$("#adminBody");
+  const drawProducts=()=>{
+    body.innerHTML=`<div style="overflow-x:auto"><table class="admin">
+      <tr><th>Product</th><th>SKU</th><th>Category</th><th>Price</th><th>MRP</th><th>Stock</th><th></th></tr>
+      ${PRODUCTS.map(p=>`<tr>
+        <td><b style="font-weight:500">${esc(p.name)}</b>${totalStock(p)<=5?' <span class="pill packed">Low stock</span>':""}</td>
+        <td>${p.sku}</td><td style="text-transform:capitalize">${p.cat}</td>
+        <td>${fmt(p.price)}</td><td>${fmt(p.mrp)}</td>
+        <td><span class="stock-ctrl"><button data-stock="${p.id}|-1" aria-label="Decrease stock">−</button><b style="min-width:26px;text-align:center">${totalStock(p)}</b><button data-stock="${p.id}|1" aria-label="Increase stock">+</button></span></td>
+        <td><button class="remove-link" data-edit="${p.id}">View</button></td></tr>`).join("")}
+    </table></div>`;
+    body.querySelectorAll("[data-stock]").forEach(b=>b.addEventListener("click",()=>{
+      const [id,d]=b.dataset.stock.split("|"); const p=byId(id);
+      const k=Object.keys(p.stock)[0]; p.stock[k]=Math.max(0,p.stock[k]+ +d); drawProducts();
+    }));
+    body.querySelectorAll("[data-edit]").forEach(b=>b.addEventListener("click",()=>location.hash="#/product/"+b.dataset.edit));
+  };
+  const drawOrders=()=>{
+    body.innerHTML= orders.length? `<div style="overflow-x:auto"><table class="admin">
+      <tr><th>Order</th><th>Customer</th><th>Items</th><th>Total</th><th>Payment</th><th>Status</th></tr>
+      ${orders.map(o=>`<tr><td><b>${o.id}</b></td><td>${esc(o.name)}<br/><span style="color:var(--muted);font-size:.8rem">${esc(o.city)}, ${esc(o.state)} ${esc(o.pin)}</span></td><td>${o.items.reduce((a,i)=>a+i.qty,0)}</td><td>${fmt(o.total)}</td><td>${o.pay}</td><td><span class="pill paid">${o.status}</span></td></tr>`).join("")}
+    </table></div>` : `<div class="empty-state"><h3>No orders yet</h3><p>Orders placed through the storefront checkout will appear here with status, payment method and totals.</p><p style="margin-top:14px"><a class="btn ghost sm" href="#/shop/women" data-nav>Go to Storefront</a></p></div>`;
+  };
+  const drawMarketing=()=>{
+    body.innerHTML=`<div class="acct-grid">
+      <div class="acct-card"><h3>Active Coupons</h3><p><b style="color:var(--ink)">BLOOM10</b> — 10% off sitewide<br/><b style="color:var(--ink)">WELCOME15</b> — 15% off first order</p><p>Try them at checkout.</p></div>
+      <div class="acct-card"><h3>Homepage Campaign</h3><p>New Season — Now Live<br/>Sale · Up to 50% off edit is featured below the hero.</p></div>
+      <div class="acct-card"><h3>Best Sellers</h3><p>${PRODUCTS.filter(p=>p.bestseller).slice(0,4).map(p=>esc(p.name)).join("<br/>")}</p></div>
+    </div>`;
+  };
+  drawProducts();
+  view.querySelectorAll("[data-atab]").forEach(b=>b.addEventListener("click",()=>{
+    view.querySelectorAll("[data-atab]").forEach(x=>x.classList.remove("sel")); b.classList.add("sel");
+    ({products:drawProducts,orders:drawOrders,marketing:drawMarketing})[b.dataset.atab]();
+  }));
+}
+
+/* ============================== ABOUT / CONTACT / POLICIES ============================== */
+function renderAbout(){
+  view.innerHTML=`<div class="wrap">
+    <section class="section" style="padding-top:36px">
+      <div class="split">
+        <div class="imgbox"><img src="assets/img-17.webp" alt="बूटी and BLOOM campaign — champagne silk dress with burgundy blooms"/></div>
+        <div>
+          <span class="kicker">About Us</span>
+          <h2>We Believe</h2>
+          <p>बूटी &amp; BLOOM creates modern pieces with an Indian soul — thoughtful silhouettes, refined details and a calm, timeless palette. Every collection is designed to feel effortless, feminine and made to be worn again.</p>
+          <p>We work with considered fabrics, honest construction and small-batch production runs, so the piece you buy today is still the piece you reach for in five years.</p>
+          <p style="margin-top:18px"><a class="btn" href="#/shop/women" data-nav>Explore the Collection</a></p>
+        </div>
+      </div>
+      <div class="values">
+        <div class="value">Craft</div><div class="value">Comfort</div><div class="value">Conscious Choices</div><div class="value">Personal Expression</div>
+      </div>
+    </section>
+    <section class="section" style="padding-top:0">
+      <div class="section-head"><span class="kicker">From the Studio</span><h2>Designed in Mumbai</h2>
+      <p>Our small studio team sketches, drapes and fits every style in-house before it joins the collection. If it does not move well, wash well and wear beautifully — it does not ship.</p></div>
+      <div class="ig-row">
+        <div class="ig"><img src="assets/img-09.jpg" alt="Ivory meadow dress in sunlight"/></div>
+        <div class="ig"><img src="assets/img-10.jpg" alt="Leather mini bag in cognac"/></div>
+        <div class="ig"><img src="assets/img-16.jpg" alt="Orchid Veil parfum with orchids"/></div>
+        <div class="ig"><img src="assets/img-08.jpg" alt="Azure rose midi by the sea"/></div>
+        <div class="ig"><img src="assets/img-14.jpg" alt="Filigree gold choker set"/></div>
+      </div>
+    </section>
+  </div>`;
+}
+const FAQS=[
+ ["How long is delivery?","Orders are dispatched within 24 hours from Mumbai and typically arrive in 3–7 business days across India. Delivery is free on orders above ₹1,999; a ₹149 fee applies below that."],
+ ["How do I choose my size?","Our pieces follow standard Indian sizing. Check the size guide on any product page — if you are between sizes, we recommend sizing up for a relaxed drape."],
+ ["Can I exchange a size?","Yes. Unworn pieces with tags attached can be exchanged within 7 days of delivery. Start from My Account or write to us and we will arrange a pickup."],
+ ["How do I track my order?","Use Track Order in the menu with your order ID (it looks like BB10284), or open the order from My Account. We also send updates by email and WhatsApp."],
+ ["How are refunds processed?","Refunds are issued to the original payment method within 5–7 business days of the returned piece reaching our studio. COD orders are refunded via UPI or bank transfer."],
+ ["Which payment methods do you accept?","UPI, credit and debit cards (Visa, Mastercard, RuPay), net banking and Cash on Delivery — all processed securely through Razorpay."]];
+function renderContact(){
+  view.innerHTML=`<div class="wrap prose" style="padding-top:30px">
+    <span class="kicker" style="display:block;text-align:center">We Reply Within a Day</span>
+    <h1>Contact &amp; FAQ</h1>
+    <div class="acct-grid" style="margin-bottom:36px">
+      <div class="acct-card"><h3>WhatsApp</h3><p>Chat with our care team, Mon–Sat, 10 am–7 pm IST.</p><a class="link-arrow" href="https://wa.me/919999999999" target="_blank" rel="noopener">Start a Chat</a></div>
+      <div class="acct-card"><h3>Email</h3><p>For orders, exchanges and everything else.</p><a class="link-arrow" href="mailto:support@bootiandbloom.com">support@bootiandbloom.com</a></div>
+      <div class="acct-card"><h3>Studio</h3><p>बूटी &amp; BLOOM Studio, Bandra West,<br/>Mumbai 400050, India</p></div>
+    </div>
+    <h2 style="text-align:left">Frequently Asked Questions</h2>
+    <div>${FAQS.map(f=>`<div class="faq-item"><button type="button">${f[0]}<span>+</span></button><div class="faq-body">${f[1]}</div></div>`).join("")}</div>
+    <h2>Write to Us</h2>
+    <form id="contactForm">
+      <div class="form-grid">
+        <div class="field"><label>Your Name</label><input name="cname" placeholder="Full name"/></div>
+        <div class="field"><label>Email</label><input name="cemail" type="email" placeholder="you@example.com"/></div>
+        <div class="field full"><label>Message</label><textarea name="cmsg" rows="4" placeholder="How can we help?"></textarea></div>
+      </div>
+      <p class="form-msg" id="contactMsg"></p>
+      <button class="btn" type="submit">Send Message</button>
+    </form>
+  </div>`;
+  view.querySelectorAll(".faq-item > button").forEach(b=>b.addEventListener("click",()=>b.parentElement.classList.toggle("open")));
+  $("#contactForm").addEventListener("submit",e=>{
+    e.preventDefault();
+    const m=$("#contactMsg");
+    const email=e.target.cemail.value.trim(), msg=e.target.cmsg.value.trim();
+    if(!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)||msg.length<5){ m.style.color="var(--err)"; m.textContent="Please add a valid email and a short message."; return; }
+    m.style.color="var(--ok)"; m.textContent="Thank you — your message is with our care team. We reply within one business day.";
+    e.target.reset();
+  });
+}
+const POLICIES={
+ shipping:{title:"Shipping Policy",body:`
+   <p>Orders are processed within 24 hours, Monday to Saturday, from our Mumbai studio.</p>
+   <h2>Delivery timelines &amp; charges</h2><ul><li>Metro cities: 2–4 business days</li><li>Rest of India: 3–7 business days</li><li>Free shipping on orders above ₹1,999 · ₹149 below the threshold</li><li>Cash on Delivery is available on serviceable PIN codes</li></ul>
+   <h2>Serviceability</h2><p>We deliver to 27,000+ PIN codes across India. Check serviceability and your estimated delivery date on any product page using the PIN checker.</p>
+   <h2>Delays</h2><p>Bad weather, strikes or courier disruptions can occasionally delay delivery. If your order is delayed by more than 3 days beyond the estimate, write to support@bootiandbloom.com and we will make it right.</p>`},
+ returns:{title:"Returns & Exchanges",body:`
+   <p>We want you to love what you ordered. If something is not right, you have 7 days from delivery to return or exchange it.</p>
+   <h2>Eligibility</h2><ul><li>Unworn, unwashed pieces with original tags and packaging</li><li>Perfumes must be unopened</li><li>Sale pieces can be exchanged for size, subject to availability</li></ul>
+   <h2>How it works</h2><ul><li>Start a return from My Account or email support@bootiandbloom.com</li><li>We arrange a doorstep pickup within 2 business days</li><li>Exchanges are shipped once the original piece reaches us</li></ul>
+   <h2>Refunds</h2><p>Approved refunds are processed to the original payment method within 5–7 business days of quality check. See our Refund &amp; Cancellation policy for details.</p>`},
+ privacy:{title:"Privacy Policy",body:`
+   <p>Your privacy matters to us. This policy explains what we collect and why.</p>
+   <h2>Data we collect</h2><ul><li>Contact details (name, email, mobile) to fulfil orders</li><li>Delivery addresses and order history</li><li>Anonymous browsing data to improve the store</li></ul>
+   <h2>How we use it</h2><p>Order fulfilment, delivery updates, customer support and — only with your consent — occasional collection news. We never sell your data. Payments are processed by Razorpay; we never store card details.</p>
+   <h2>Your rights</h2><p>Write to support@bootiandbloom.com to access, correct or delete your personal data at any time.</p>`},
+ terms:{title:"Terms & Conditions",body:`
+   <p>By shopping at बूटी &amp; BLOOM you agree to these terms.</p>
+   <h2>Orders &amp; pricing</h2><p>Prices are listed in Indian Rupees and include GST. An order is confirmed once payment succeeds (or, for COD, once placed). We may cancel orders affected by pricing errors or stock issues, with a full refund.</p>
+   <h2>Availability</h2><p>We work in small batches; if a piece sells out between cart and checkout we will notify you and refund any payment in full.</p>
+   <h2>Intellectual property</h2><p>All designs, photography and copy on this site belong to बूटी &amp; BLOOM and may not be reused commercially without permission.</p>`},
+ refund:{title:"Refund & Cancellation",body:`
+   <p>Changed your mind? Here is how cancellations and refunds work.</p>
+   <h2>Cancellation</h2><ul><li>Orders can be cancelled free of charge before dispatch (usually within 24 hours)</li><li>Once dispatched, please use the Returns flow after delivery</li></ul>
+   <h2>Refund method &amp; timeline</h2><ul><li>Prepaid orders: refunded to the original payment method in 5–7 business days</li><li>COD orders: refunded via UPI or bank transfer, collected at return confirmation</li><li>Shipping charges are non-refundable except where the error is ours</li></ul>
+   <h2>Exceptions</h2><p>Unopened perfumes and unworn pieces with tags qualify. Used or tag-less items are returned to the customer instead of refunded.</p>`},
+};
+function renderPolicy(slug){
+  const p=POLICIES[slug]||POLICIES.shipping;
+  view.innerHTML=`<div class="wrap prose" style="padding-top:30px">
+    <span class="kicker" style="display:block;text-align:center">बूटी &amp; BLOOM</span>
+    <h1>${p.title}</h1>${p.body}
+    <p style="margin-top:34px;text-align:center"><a class="btn ghost sm" href="#/contact" data-nav>Questions? Contact Us</a></p>
+  </div>`;
+}
+
+/* ============================== HEADER WIRING ============================== */
+$("#burgerBtn").addEventListener("click",()=>$("#mobileDrawer").classList.add("open"));
+document.querySelectorAll("[data-close-drawer]").forEach(el=>el.addEventListener("click",()=>$("#mobileDrawer").classList.remove("open")));
+$("#searchBtn").addEventListener("click",()=>{
+  const sb=$("#searchbar"); sb.classList.toggle("open");
+  if(sb.classList.contains("open")) $("#searchInput").focus();
+});
+$("#wishBtn").addEventListener("click",()=>location.hash="#/wishlist");
+$("#bagBtn").addEventListener("click",()=>location.hash="#/cart");
+$("#modal").querySelector("[data-close-modal]").addEventListener("click",()=>$("#modal").classList.remove("open"));
+$("#sizePop").querySelector("[data-close-sizepop]").addEventListener("click",()=>$("#sizePop").classList.remove("open"));
+document.addEventListener("keydown",e=>{ if(e.key==="Escape") closeAllOverlays(); });
+$("#searchInput").addEventListener("input",e=>{
+  const q=e.target.value.trim().toLowerCase(); const box=$("#searchLive");
+  if(q.length<2){ box.innerHTML=""; return; }
+  const hits=PRODUCTS.filter(p=>(p.name+" "+p.cat+" "+p.colors.map(c=>c[0]).join(" ")).toLowerCase().includes(q)).slice(0,4);
+  box.innerHTML= hits.length? `<div class="grid" style="grid-template-columns:repeat(4,1fr)">${hits.map(cardHTML).join("")}</div>` : `<p style="color:var(--muted)">No matches for “${esc(q)}”. Try “dress”, “bag” or “parfum”.</p>`;
+  bindCards(box);
+});
+$("#searchForm").addEventListener("submit",e=>{
+  e.preventDefault();
+  shopState.query=$("#searchInput").value.trim();
+  shopState.cats.clear(); shopState.sizes.clear(); shopState.colors.clear();
+  location.hash="#/shop/all";
+  if(route.view==="shop") render();
+  $("#searchbar").classList.remove("open");
+});
+render();
+</script>
+</body>
+</html>
